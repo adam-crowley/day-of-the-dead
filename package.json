@@ -15,7 +15,8 @@
     "build:server": "tsc -p ./server/tsconfig.json",
     "test": "vitest",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "format": "prettier -w '**/*.{js,jsx,ts,tsx}'"
+    "format": "prettier -w '**/*.{js,jsx,ts,tsx}'",
+    "knex": "knex --knexfile ./server/db/knexfile.js"
   },
   "keywords": [
     "frontend"
@@ -29,7 +30,9 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.2",
+    "knex": "^2.5.1",
     "react-router-dom": "^6.14.2",
+    "sqlite3": "^5.1.6",
     "ts-node": "^10.9.1"
   },
   "devDependencies": {

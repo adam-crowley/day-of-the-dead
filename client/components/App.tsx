@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom'
 
 import Nav from './Nav'
 import Header from './Header'
+import Footer from './Footer'
 
 const App = () => {
   return (
@@ -10,7 +11,10 @@ const App = () => {
         <div id="content-wrap">
           <Header />
           <Nav />
-          <h1>Hello!</h1>
+          <main className="main-content">
+            <Outlet />
+          </main>
+          <Footer />
         </div>
       </div>
     </>

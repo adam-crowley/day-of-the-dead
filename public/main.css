@@ -23,6 +23,8 @@ header {
   width: 100%;
 }
 
+
+
 a:link, a:visited  {
   color: #000724;
   text-decoration: none;
@@ -40,7 +42,7 @@ h1 {
 
 h2 {
   display: inline-block;
-  margin: 1rem 0 1rem 3rem;
+  margin: 1rem 0 1rem 0;
   font-size: 2rem;
   text-transform: capitalize;
 }
@@ -102,6 +104,8 @@ p {
   width: 209px;
   list-style: none;
 }
+
+
 
 /* Assign icons to list items */
 .cards li:nth-of-type(5n+1) {
@@ -209,6 +213,10 @@ textarea {
 #content-wrap {
   padding-bottom: 60px;    /* Footer height */
   background-color: white;
+}
+
+.main-content {
+  padding: 48px;
 }
 
 footer {
