@@ -25,7 +25,7 @@ header {
 
 
 
-a:link, a:visited  {
+a {
   color: #000724;
   text-decoration: none;
 }
@@ -37,6 +37,14 @@ a:hover {
 h1 {
   padding: 128px 0 48px 48px;
   font-size: 3.5em;
+  color: white;
+}
+
+h1 a {
+  color: white;
+}
+
+h1 a:hover {
   color: white;
 }
 
