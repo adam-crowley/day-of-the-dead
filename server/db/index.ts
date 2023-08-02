@@ -1,4 +1,5 @@
 import knexFile from './knexfile'
+// const knexFile = require('./knexfile')
 import knex from 'knex'
 
 type Environment = 'production' | 'test' | 'development'

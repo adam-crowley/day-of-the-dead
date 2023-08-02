@@ -1,8 +1,4 @@
-import * as db from '../../server/db'
-
 function Locations() {
-  // const locations = async () => await db.getAllLocations()
-  // console.log('locations: ', locations)
   return (
     <>
       <h2>locations:</h2>
