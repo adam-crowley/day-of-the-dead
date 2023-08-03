@@ -2,16 +2,15 @@ import { join } from 'node:path'
 import express from 'express'
 import cors, { CorsOptions } from 'cors'
 
+import locations from './routes/locations'
+
 const server = express()
 
-server.get('/api/v1/greeting', (req, res) => {
-  const greetings = ['hola', 'hi', 'hello', 'howdy']
-  const index = Math.floor(Math.random() * greetings.length)
-  console.log(index)
-  res.json({ greeting: greetings[index] })
-})
-
 server.use(express.json())
+
+server.use('/api/v1/locations', locations)
+server.use('/api/v1/*', (req, res) => res.sendStatus(404))
+
 server.use(express.static(join(__dirname, './public')))
 server.use(cors('*' as CorsOptions))
 
