@@ -1,5 +1,5 @@
 import connection from './connection'
 
-export function getAllLocations(db = connection) {
-  return db('locations').select()
+export async function getAllLocations(db = connection) {
+  return await db('locations').select()
 }
