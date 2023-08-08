@@ -7,7 +7,6 @@ router.get('/', async (req, res) => {
   try {
     const locations = await db.getAllLocations()
     res.json(locations)
-    console.log('locations: ', locations)
   } catch (error) {
     console.error(error)
     res.status(500).json({ message: 'error in server' })
