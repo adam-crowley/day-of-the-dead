@@ -12,6 +12,7 @@ export function getEventsByDay(day: string, db = connection) {
       'locations.name as locationName',
       'events.id as id',
       'events.name as eventName',
-      'events.time as time'
+      'events.time as time',
+      'events.description as description'
     )
 }
