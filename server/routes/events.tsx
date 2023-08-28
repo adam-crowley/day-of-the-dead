@@ -17,4 +17,24 @@ router.post('/add', async (req, res) => {
   }
 })
 
+router.get('/add/:day', async (req, res) => {
+  try {
+    const eventDays = ['friday', 'saturday', 'sunday']
+    const day = req.params.day
+    const days = eventDays.map((eventDay) => ({
+      value: eventDay,
+      name: eventDay,
+      selected: eventDay === day ? 'selected' : '',
+    }))
+    const locations = await db.getAllLocations()
+    const viewData = { locations, days, day }
+    // res.render('addEvent', viewData)
+    res.json(viewData)
+  } catch (error) {
+    if (error instanceof Error) {
+      res.status(500).json({ error: error.message })
+    }
+  }
+})
+
 export default router

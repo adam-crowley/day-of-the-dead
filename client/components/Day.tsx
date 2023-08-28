@@ -22,7 +22,7 @@ function Day() {
       <h2>
         events: <span className="data">{day}</span>
       </h2>
-      <a className="nav" href="/events/add/day">
+      <a className="nav" href={`/events/add/${day}`}>
         add event
       </a>
       <ul className="cards">
