@@ -4,6 +4,7 @@ import cors, { CorsOptions } from 'cors'
 
 import locations from './routes/locations'
 import schedule from './routes/schedule'
+import events from './routes/events'
 
 const server = express()
 
@@ -11,6 +12,7 @@ server.use(express.json())
 
 server.use('/api/v1/locations', locations)
 server.use('/api/v1/schedule', schedule)
+server.use('/api/v1/events', events)
 server.use('/api/v1/*', (req, res) => res.sendStatus(404))
 
 server.use(express.static(join(__dirname, './public')))

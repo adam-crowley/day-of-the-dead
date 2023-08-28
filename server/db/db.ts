@@ -1,7 +1,8 @@
 import connection from './connection'
+import type { Event } from '../../models/Event'
 
-export async function getAllLocations(db = connection) {
-  return await db('locations').select()
+export function getAllLocations(db = connection) {
+  return db('locations').select()
 }
 
 export function getEventsByDay(day: string, db = connection) {
@@ -15,4 +16,16 @@ export function getEventsByDay(day: string, db = connection) {
       'events.time as time',
       'events.description as description'
     )
+}
+
+export function addEvent(newEvent: Event, db = connection) {
+  const eventData = {
+    id: newEvent.id,
+    name: newEvent.name,
+    description: newEvent.description,
+    location_id: newEvent.locationId,
+    day: newEvent.day,
+    time: newEvent.time,
+  }
+  return db('events').insert(eventData)
 }

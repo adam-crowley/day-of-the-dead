@@ -4,7 +4,7 @@ function Header() {
   return (
     <header>
       <h1>
-        <Link to="/">dreamfest</Link>
+        <Link to="/">Musicfest</Link>
       </h1>
     </header>
   )

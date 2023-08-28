@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import { getEventsByDay } from '../apis/api'
-import { Event } from '../../models/event'
+import { EventWithLocation } from '../../models/event'
 
 function Day() {
   const { day } = useParams()
@@ -26,7 +26,7 @@ function Day() {
         add event
       </a>
       <ul className="cards">
-        {events.map((event: Event) => (
+        {events.map((event: EventWithLocation) => (
           <li key={event.id} className="card">
             <div className="event">
               <span className="title">{event.eventName}</span>

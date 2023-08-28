@@ -22,7 +22,7 @@ function Locations() {
             <div className="location">
               <span className="title">{location.name}</span>
               <p className="data">{location.description}</p>
-              <a href="/locations/{{id}}/edit">edit location</a>
+              <a href={`/locations/${location.id}/edit`}>edit location</a>
             </div>
           </li>
         ))}
