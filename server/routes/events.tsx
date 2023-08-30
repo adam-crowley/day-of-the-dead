@@ -17,6 +17,7 @@ router.post('/add', async (req, res) => {
   }
 })
 
+// GET /events/add/:day
 router.get('/add/:day', async (req, res) => {
   try {
     const eventDays = ['friday', 'saturday', 'sunday']
@@ -28,7 +29,6 @@ router.get('/add/:day', async (req, res) => {
     }))
     const locations = await db.getAllLocations()
     const viewData = { locations, days, day }
-    // res.render('addEvent', viewData)
     res.json(viewData)
   } catch (error) {
     if (error instanceof Error) {
