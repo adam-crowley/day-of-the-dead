@@ -1,9 +1,25 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
+import { addEventByDay } from '../apis/api'
 import type { Event } from '../../models/event'
 
 function AddEvent() {
+  const { day } = useParams()
+  const [eventsData, setEventsData] = useState({})
+  // const locations = []
+
+  useEffect(() => {
+    const fetchEventsByDay = async () => {
+      if (day) {
+        const eventData = await addEventByDay(day)
+        setEventsData(eventData)
+      }
+    }
+    fetchEventsByDay()
+  }, [day])
+
   const {
     register,
     handleSubmit,
@@ -19,9 +35,9 @@ function AddEvent() {
       <h2>add new event</h2>
       {/* id: newEvent.id, */}
       {/* locationId: number */}
-      {/* day: string */}
       {/* time: string */}
-
+      {console.log('addEventByDay', eventsData)}
+      {/* {console.log('addEventByDay', eventsData.locations)} */}
       <form onSubmit={handleSubmit(onSubmit)} className="form">
         <label htmlFor="name">Event name</label>
         <input
@@ -50,15 +66,23 @@ function AddEvent() {
           </>
         )}
         <label htmlFor="location">Location</label>
-        <select id="location" {...register('locationId', { required: true })}>
-          <option value="1">Trash Panda Domicile</option>
-        </select>
-        {/* <label for="location">Location</label>
-        <select id="location" name="locationId">
-          {{#each locations}}
-          <option value="{{id}}">{{name}}</option>
-          {{/each}}
-        </select> */}
+        <select
+          id="location"
+          {...register('locationId', { required: true })}
+        ></select>
+
+        <label htmlFor="day">Day</label>
+        {/* <h1>{eventsData.day}</h1> */}
+        {/* {eventsData.day && (
+          <select id="day" {...register('day', { required: true })}>
+            {eventsData.day.map((eventDay: string) => (
+              <option key={eventDay} value={eventDay}>
+                {eventDay}
+              </option>
+            ))}
+          </select>
+        )} */}
+
         <div></div>
         <button>Add new event</button>
       </form>
