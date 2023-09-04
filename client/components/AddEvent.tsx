@@ -3,12 +3,12 @@ import { useParams } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
 import { addEventByDay } from '../apis/api'
-import type { Event } from '../../models/event'
+import type { Event, EventsData, EventDay } from '../../models/event'
+import type { Location } from '../../models/location'
 
 function AddEvent() {
   const { day } = useParams()
-  const [eventsData, setEventsData] = useState({})
-  // const locations = []
+  const [eventsData, setEventsData] = useState<EventsData>()
 
   useEffect(() => {
     const fetchEventsByDay = async () => {
@@ -26,66 +26,82 @@ function AddEvent() {
     formState: { errors },
   } = useForm()
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: Event) => {
     console.log(data)
   }
 
   return (
     <>
-      <h2>add new event</h2>
-      {/* id: newEvent.id, */}
-      {/* locationId: number */}
-      {/* time: string */}
-      {console.log('addEventByDay', eventsData)}
-      {/* {console.log('addEventByDay', eventsData.locations)} */}
-      <form onSubmit={handleSubmit(onSubmit)} className="form">
-        <label htmlFor="name">Event name</label>
-        <input
-          id="name"
-          type="text"
-          placeholder="Event name"
-          {...register('name', { required: true })}
-        />
-        {errors.name && (
-          <>
-            <div></div>
-            <p>This field is required</p>
-          </>
-        )}
-        <label htmlFor="description">Description</label>
-        <textarea
-          rows={3}
-          id="description"
-          placeholder="Event description"
-          {...register('description', { required: true })}
-        ></textarea>
-        {errors.description && (
-          <>
-            <div></div>
-            <p>This field is required</p>
-          </>
-        )}
-        <label htmlFor="location">Location</label>
-        <select
-          id="location"
-          {...register('locationId', { required: true })}
-        ></select>
+      <h2>add new event for {day}</h2>
 
-        <label htmlFor="day">Day</label>
-        {/* <h1>{eventsData.day}</h1> */}
-        {/* {eventsData.day && (
-          <select id="day" {...register('day', { required: true })}>
-            {eventsData.day.map((eventDay: string) => (
-              <option key={eventDay} value={eventDay}>
-                {eventDay}
+      {console.log('addEventByDay', eventsData)}
+
+      {eventsData ? (
+        <form onSubmit={handleSubmit(onSubmit)} className="form">
+          <label htmlFor="name">Event name</label>
+          <input
+            id="name"
+            type="text"
+            placeholder="Event name"
+            {...register('name', { required: true })}
+          />
+          {errors.name && (
+            <>
+              <div></div>
+              <p>This field is required</p>
+            </>
+          )}
+          <label htmlFor="description">Description</label>
+          <textarea
+            rows={3}
+            id="description"
+            placeholder="Event description"
+            {...register('description', { required: true })}
+          ></textarea>
+          {errors.description && (
+            <>
+              <div></div>
+              <p>This field is required</p>
+            </>
+          )}
+          <label htmlFor="location">Location</label>
+          <select id="location" {...register('locationId')}>
+            {eventsData.locations.map((location: Location) => (
+              <option key={location.name} value={location.name}>
+                {location.name}
               </option>
             ))}
           </select>
-        )} */}
 
-        <div></div>
-        <button>Add new event</button>
-      </form>
+          <label htmlFor="day">Day</label>
+          <select id="day" {...register('day')} defaultValue={day}>
+            {eventsData.days.map((eventDay: EventDay) => (
+              <option key={eventDay.name} value={eventDay.value}>
+                {eventDay.name}
+              </option>
+            ))}
+          </select>
+
+          <label htmlFor="time">Time</label>
+          <input
+            type="text"
+            id="time"
+            placeholder="Example: 1pm - 2pm"
+            {...register('time', { required: true })}
+          />
+          {errors.time && (
+            <>
+              <div></div>
+              <p>This field is required</p>
+            </>
+          )}
+
+          <div></div>
+          <button>Add new event</button>
+        </form>
+      ) : (
+        <h1>Events data loading</h1>
+      )}
     </>
   )
 }

@@ -18,3 +18,15 @@ export interface EventWithLocation {
 export interface Event extends EventData {
   id: number
 }
+
+export interface EventsData {
+  locations: []
+  days: []
+  day: string
+}
+
+export interface EventDay {
+  value: string
+  name: string
+  selected: string
+}
