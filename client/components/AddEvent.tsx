@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
-import { addEventByDay } from '../apis/api'
+import { addEventByDay, addEvent } from '../apis/api'
 import type { Event, EventsData, EventDay } from '../../models/event'
 import type { Location } from '../../models/location'
 
@@ -26,8 +26,15 @@ function AddEvent() {
     formState: { errors },
   } = useForm()
 
-  const onSubmit = (data: Event) => {
-    console.log(data)
+  const onSubmit = async (data: Event) => {
+    const response = await addEvent(data)
+    if (response.status === 200) {
+      console.log('success!')
+      console.log(data)
+    } else {
+      console.log('something went wrong!')
+    }
+    // console.log(data)
   }
 
   return (
@@ -67,7 +74,7 @@ function AddEvent() {
           <label htmlFor="location">Location</label>
           <select id="location" {...register('locationId')}>
             {eventsData.locations.map((location: Location) => (
-              <option key={location.name} value={location.name}>
+              <option key={location.name} value={location.id}>
                 {location.name}
               </option>
             ))}
@@ -100,7 +107,7 @@ function AddEvent() {
           <button>Add new event</button>
         </form>
       ) : (
-        <h1>Events data loading</h1>
+        <p>Events data loading</p>
       )}
     </>
   )
