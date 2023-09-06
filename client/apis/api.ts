@@ -13,7 +13,8 @@ export async function getEventsByDay(day: string) {
 }
 
 export async function addEvent(event: Event) {
-  return await request.post(`/api/v1/events/add`).send(event)
+  const res = await request.post(`/api/v1/events/add`).send(event)
+  return res.body
 }
 
 export async function addEventByDay(day: string) {

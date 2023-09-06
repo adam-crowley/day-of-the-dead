@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
+import { useForm, SubmitHandler } from 'react-hook-form'
 
 import { addEventByDay, addEvent } from '../apis/api'
 import type { Event, EventsData, EventDay } from '../../models/event'
@@ -9,6 +9,7 @@ import type { Location } from '../../models/location'
 function AddEvent() {
   const { day } = useParams()
   const [eventsData, setEventsData] = useState<EventsData>()
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
 
   useEffect(() => {
     const fetchEventsByDay = async () => {
@@ -24,26 +25,22 @@ function AddEvent() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm<Event>()
 
-  const onSubmit = async (data: Event) => {
-    const response = await addEvent(data)
-    if (response.status === 200) {
-      console.log('success!')
-      console.log(data)
-    } else {
-      console.log('something went wrong!')
-    }
-    // console.log(data)
+  const onSubmit: SubmitHandler<Event> = async (data: Event) => {
+    await addEvent(data)
+    setIsSubmitted(true)
   }
 
   return (
     <>
       <h2>add new event for {day}</h2>
 
-      {console.log('addEventByDay', eventsData)}
-
-      {eventsData ? (
+      {isSubmitted ? (
+        <div className="success-message">
+          <p>Form submitted successfully!</p>
+        </div>
+      ) : eventsData ? (
         <form onSubmit={handleSubmit(onSubmit)} className="form">
           <label htmlFor="name">Event name</label>
           <input
@@ -104,10 +101,10 @@ function AddEvent() {
           )}
 
           <div></div>
-          <button>Add new event</button>
+          <button type="submit">Add new event</button>
         </form>
       ) : (
-        <p>Events data loading</p>
+        <p>Loading new event form</p>
       )}
     </>
   )
