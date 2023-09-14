@@ -18,7 +18,7 @@ function Locations() {
       <h2>locations:</h2>
       <ul className="cards">
         {locations.map((location: Location) => (
-          <li key={location.id} className="card">
+          <li key={location.id} className="card w-24">
             <div className="location">
               <span className="title">{location.name}</span>
               <p className="data">{location.description}</p>
