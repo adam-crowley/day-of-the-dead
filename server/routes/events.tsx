@@ -36,4 +36,19 @@ router.get('/add/:day', async (req, res) => {
   }
 })
 
+// DELETE /events/delete
+router.delete('/delete', async (req, res) => {
+  try {
+    const id = Number(req.body.id)
+    const day = req.body.day
+    await db.deleteEvent(id)
+    res.sendStatus(200)
+    // res.redirect(`/schedule/${day}`)
+  } catch (error) {
+    if (error instanceof Error) {
+      res.status(500).json({ error: error.message })
+    }
+  }
+})
+
 export default router

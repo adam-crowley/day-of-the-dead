@@ -29,3 +29,7 @@ export function addEvent(newEvent: Event, db = connection) {
   }
   return db('events').insert(eventData)
 }
+
+export function deleteEvent(id: number, db = connection) {
+  return db('events').where('id', id).del()
+}
