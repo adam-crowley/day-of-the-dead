@@ -51,4 +51,34 @@ router.delete('/delete', async (req, res) => {
   }
 })
 
+// GET /events/3/edit
+router.get('/:id/edit', async (req, res) => {
+  try {
+    const eventDays = ['friday', 'saturday', 'sunday']
+    const id = Number(req.params.id)
+    const event = await db.getEventById(id)
+    const locations = await db.getAllLocations()
+    locations.map((location) => {
+      if (location.id === event.locationId) {
+        location.selected = 'selected'
+      } else {
+        location.selected = ''
+      }
+    })
+    const days = eventDays.map((eventDay) => ({
+      value: eventDay,
+      name: eventDay,
+      // name: capitalise(eventDay),
+      selected: eventDay === event.day ? 'selected' : '',
+    }))
+    const viewData = { event, locations, days }
+    // res.render('editEvent', viewData)
+    res.json(viewData)
+  } catch (error) {
+    if (error instanceof Error) {
+      res.status(500).json({ error: error.message })
+    }
+  }
+})
+
 export default router

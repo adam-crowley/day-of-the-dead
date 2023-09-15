@@ -33,3 +33,17 @@ export function addEvent(newEvent: Event, db = connection) {
 export function deleteEvent(id: number, db = connection) {
   return db('events').where('id', id).del()
 }
+
+export function getEventById(id: number, db = connection) {
+  return db('events')
+    .where('id', id)
+    .select(
+      'id',
+      'location_id as locationId',
+      'day',
+      'time',
+      'name',
+      'description'
+    )
+    .first()
+}
