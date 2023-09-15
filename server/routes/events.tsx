@@ -81,4 +81,19 @@ router.get('/:id/edit', async (req, res) => {
   }
 })
 
+// PUT /events/edit
+router.put('/edit', async (req, res) => {
+  try {
+    const day = req.body.day
+    const updatedEvent = req.body
+    await db.updateEvent(updatedEvent)
+    res.sendStatus(201)
+    // res.redirect(`/schedule/${day}`)
+  } catch (error) {
+    if (error instanceof Error) {
+      res.status(500).json({ error: error.message })
+    }
+  }
+})
+
 export default router

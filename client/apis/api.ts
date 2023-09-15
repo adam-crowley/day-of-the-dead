@@ -31,3 +31,8 @@ export async function getEventById(id: number) {
   const res = await request.get(`/api/v1/events/${id}/edit`)
   return res.body
 }
+
+export async function updateEvent(event: Event) {
+  const res = await request.put(`/api/v1/events/edit`).send(event)
+  return res.body
+}

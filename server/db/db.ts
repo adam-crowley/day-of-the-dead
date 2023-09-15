@@ -47,3 +47,15 @@ export function getEventById(id: number, db = connection) {
     )
     .first()
 }
+
+export function updateEvent(updatedEvent: Event, db = connection) {
+  const eventData = {
+    id: updatedEvent.id,
+    name: updatedEvent.name,
+    description: updatedEvent.description,
+    location_id: updatedEvent.locationId,
+    day: updatedEvent.day,
+    time: updatedEvent.time,
+  }
+  return db('events').where('id', updatedEvent.id).update(eventData)
+}
