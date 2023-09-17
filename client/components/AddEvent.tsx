@@ -56,6 +56,7 @@ function AddEvent() {
               <p>This field is required</p>
             </>
           )}
+
           <label htmlFor="description">Description</label>
           <textarea
             rows={3}
@@ -69,6 +70,7 @@ function AddEvent() {
               <p>This field is required</p>
             </>
           )}
+
           <label htmlFor="location">Location</label>
           <select id="location" {...register('locationId')}>
             {eventsData.locations.map((location: Location) => (
