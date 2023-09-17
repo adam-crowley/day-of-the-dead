@@ -30,3 +30,16 @@ export interface EventDay {
   name: string
   selected: string
 }
+
+export interface EventByIdData {
+  event: {
+    id: number
+    locationId: number
+    day: string
+    time: string
+    name: string
+    description: string
+  }
+  locations: []
+  days: []
+}
