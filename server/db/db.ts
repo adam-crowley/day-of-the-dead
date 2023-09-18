@@ -1,5 +1,7 @@
 import connection from './connection'
+
 import type { Event } from '../../models/Event'
+import type { Location } from '../../models/location'
 
 export function getAllLocations(db = connection) {
   return db('locations').select()
@@ -58,4 +60,17 @@ export function updateEvent(updatedEvent: Event, db = connection) {
     time: updatedEvent.time,
   }
   return db('events').where('id', updatedEvent.id).update(eventData)
+}
+
+export function getLocationById(id: number, db = connection) {
+  return db('locations').where('id', id).select().first()
+}
+
+export function updateLocation(updatedLocation: Location, db = connection) {
+  const locationData = {
+    id: updatedLocation.id,
+    name: updatedLocation.name,
+    description: updatedLocation.description,
+  }
+  return db('locations').where('id', updatedLocation.id).update(locationData)
 }

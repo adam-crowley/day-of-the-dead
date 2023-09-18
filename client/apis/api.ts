@@ -1,6 +1,7 @@
 import request from 'superagent'
 
 import type { Event } from '../../models/event'
+import type { Location } from '../../models/location'
 
 export async function getAllLocations() {
   const res = await request.get('/api/v1/locations')
@@ -34,5 +35,15 @@ export async function getEventById(id: number) {
 
 export async function updateEvent(event: Event) {
   const res = await request.put(`/api/v1/events/edit`).send(event)
+  return res.body
+}
+
+export async function getLocationById(id: number) {
+  const res = await request.get(`/api/v1/locations/${id}/edit`)
+  return res.body
+}
+
+export async function updateLocation(location: Location) {
+  const res = await request.put(`/api/v1/locations/edit`).send(location)
   return res.body
 }

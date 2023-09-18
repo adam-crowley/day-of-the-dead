@@ -40,10 +40,8 @@ router.get('/add/:day', async (req, res) => {
 router.delete('/delete', async (req, res) => {
   try {
     const id = Number(req.body.id)
-    const day = req.body.day
     await db.deleteEvent(id)
     res.sendStatus(200)
-    // res.redirect(`/schedule/${day}`)
   } catch (error) {
     if (error instanceof Error) {
       res.status(500).json({ error: error.message })
@@ -68,11 +66,9 @@ router.get('/:id/edit', async (req, res) => {
     const days = eventDays.map((eventDay) => ({
       value: eventDay,
       name: eventDay,
-      // name: capitalise(eventDay),
       selected: eventDay === event.day ? 'selected' : '',
     }))
     const viewData = { event, locations, days }
-    // res.render('editEvent', viewData)
     res.json(viewData)
   } catch (error) {
     if (error instanceof Error) {
@@ -84,11 +80,9 @@ router.get('/:id/edit', async (req, res) => {
 // PUT /events/edit
 router.put('/edit', async (req, res) => {
   try {
-    const day = req.body.day
     const updatedEvent = req.body
     await db.updateEvent(updatedEvent)
     res.sendStatus(201)
-    // res.redirect(`/schedule/${day}`)
   } catch (error) {
     if (error instanceof Error) {
       res.status(500).json({ error: error.message })
