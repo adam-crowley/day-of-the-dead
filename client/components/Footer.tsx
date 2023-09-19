@@ -2,15 +2,14 @@ function Footer() {
   return (
     <footer>
       <p>
-        Header image from{' '}
-        <a
-          href="https://www.freepik.com/vectors/river"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Freepik
+        Image by{' '}
+        <a href="https://pixabay.com/users/limoncitosketching-7400657/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3368234">
+          Marta Simon
         </a>{' '}
-        created by upklyak
+        from{' '}
+        <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3368234">
+          Pixabay
+        </a>
       </p>
       <p>
         Animal icons created by{' '}

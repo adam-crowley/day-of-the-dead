@@ -525,12 +525,73 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.flex {
+  display: flex;
+}
+
 .hidden {
   display: none;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .w-24 {
   width: 6rem;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.bg-dd-dark-purple {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 8 37 / var(--tw-bg-opacity));
+}
+
+.bg-dd-yellow {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 239 211 / var(--tw-bg-opacity));
+}
+
+.text-left {
+  text-align: left;
+}
+
+.font-serif {
+  font-family: Merriweather, serif;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.text-dd-yellow {
+  --tw-text-opacity: 1;
+  color: rgb(243 239 211 / var(--tw-text-opacity));
+}
+
+.text-dd-gold {
+  --tw-text-opacity: 1;
+  color: rgb(255 192 1 / var(--tw-text-opacity));
 }
 
 * {
@@ -543,19 +604,8 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: white;
-  min-width: 360px;
-  max-width: 1150px;
-  margin: 0 auto;
-}
-
-header {
-  background-image: url('/images/forest-header.webp');
-  background-size: cover;
-  background-position: center;
-  background-color: #000724;
-  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -565,12 +615,6 @@ a {
 
 a:hover {
   color: #B80C09;
-}
-
-h1 {
-  padding: 128px 0 48px 48px;
-  font-size: 3.5em;
-  color: white;
 }
 
 h1 a {

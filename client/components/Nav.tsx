@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 function Nav() {
   return (
-    <nav>
+    <nav className="bg-dd-yellow">
       <Link to="/schedule/friday">friday</Link>
       <Link to="/schedule/saturday">saturday</Link>
       <Link to="/schedule/sunday">sunday</Link>
