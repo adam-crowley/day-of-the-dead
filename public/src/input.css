@@ -16,61 +16,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
+.header__link {
+  filter: drop-shadow(0px 0px 50px rgba(218, 0, 253, 0.5));
+}
 
 a {
-  color: #000724;
   text-decoration: none;
 }
 
-a:hover {
-  color: #B80C09;
-}
 
-h1 a {
-  color: white;
-}
-
-h1 a:hover {
-  color: white;
-}
 
 h2 {
   display: inline-block;
   margin: 1rem 0 1rem 0;
   font-size: 2rem;
   text-transform: capitalize;
-}
-
-nav {
-  background-color: #feffb1;
-  width: 100%;
-  padding: 0.25rem 0 0.25rem 0;
-}
-
-nav a, .nav {
-  display: inline-block;
-  margin-left: 3rem;
-  padding: 1rem 0 1rem 0;
-  font-size: large;
-  font-weight: bold;
-  text-transform: capitalize;
-  color: #000724;
-}
-
-@media (max-width:630px) {
-  nav a, .nav {
-    display: block;
-    padding: 5px;
-  }
-}
-
-@media (min-width:630px) {
-  .nav {
-    float: right;
-    margin-right: 3rem;
-  }
 }
 
 p {
