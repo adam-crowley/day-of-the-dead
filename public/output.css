@@ -533,12 +533,25 @@ video {
   position: relative;
 }
 
-.right-0 {
-  right: 0px;
+.bottom-0 {
+  bottom: 0px;
+}
+
+.right-7 {
+  right: 1.75rem;
 }
 
 .z-10 {
   z-index: 10;
+}
+
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.mr-8 {
+  margin-right: 2rem;
 }
 
 .flex {
@@ -549,32 +562,24 @@ video {
   display: none;
 }
 
-.w-1\/2 {
-  width: 50%;
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-24 {
   width: 6rem;
 }
 
-.w-7\/12 {
-  width: 58.333333%;
+.w-\[300px\] {
+  width: 300px;
 }
 
-.w-6\/12 {
-  width: 50%;
+.w-full {
+  width: 100%;
 }
 
-.w-1\/3 {
-  width: 33.333333%;
-}
-
-.w-2\/3 {
-  width: 66.666667%;
-}
-
-.w-5\/12 {
-  width: 41.666667%;
+.max-w-7xl {
+  max-width: 80rem;
 }
 
 .flex-col {
@@ -591,6 +596,15 @@ video {
 
 .self-center {
   align-self: center;
+}
+
+.border-t {
+  border-top-width: 1px;
+}
+
+.border-t-dd-yellow {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(243 239 211 / var(--tw-border-opacity));
 }
 
 .bg-dd-dark-purple {
@@ -629,10 +643,6 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-}
-
-.pr-10 {
-  padding-right: 2.5rem;
 }
 
 .text-left {
@@ -676,6 +686,10 @@ video {
   color: rgb(243 239 211 / var(--tw-text-opacity));
 }
 
+.underline {
+  text-decoration-line: underline;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -690,12 +704,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.header__link {
-  filter: drop-shadow(0px 0px 50px rgba(218, 0, 253, 0.5));
-}
-
 a {
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 h2 {
@@ -705,8 +716,8 @@ h2 {
   text-transform: capitalize;
 }
 
-p {
-  margin: 0;
+.header__link {
+  filter: drop-shadow(0px 0px 50px rgba(218, 0, 253, 0.5));
 }
 
 .data {
@@ -837,43 +848,18 @@ textarea {
   padding: 1rem;
 }
 
-/* Tricks to make footer stay at the bottom of the page */
-
-#page-container {
-  position: relative;
-  min-height: 100vh;
+.hover\:text-dd-light-purple:hover {
+  --tw-text-opacity: 1;
+  color: rgb(218 0 253 / var(--tw-text-opacity));
 }
 
-#content-wrap {
-  padding-bottom: 60px;
-  /* Footer height */
-  background-color: white;
+.hover\:no-underline:hover {
+  text-decoration-line: none;
 }
 
-.main-content {
-  padding: 48px;
-}
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #1A5068;
-  text-align: center;
-}
 
-footer p {
-  display: inline-block;
-  padding-top: 10px;
-  margin: 0 10px;
-  color: white;
-}
 
-footer a:link, footer a:visited {
-  color: #AFC2D5;
-}
 
-footer a:hover {
-  color: white;
-}
+
+

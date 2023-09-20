@@ -7,15 +7,15 @@ import Footer from './Footer'
 const App = () => {
   return (
     <>
-      <div id="page-container">
-        <div id="content-wrap">
-          <Header />
-          <Nav />
-          <main className="main-content">
+      <div className="relative min-h-screen bg-dd-dark-purple">
+        <Header />
+        <Nav />
+        <main className="flex justify-center">
+          <div className="w-full max-w-7xl">
             <Outlet />
-          </main>
-          <Footer />
-        </div>
+          </div>
+        </main>
+        <Footer />
       </div>
     </>
   )

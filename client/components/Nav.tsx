@@ -4,20 +4,36 @@ function Nav() {
   return (
     <nav className="flex justify-center relative z-10 py-5 bg-dd-yellow">
       <ul className="flex text-center font-serif text-2xl">
-        <li className="">
-          <Link to="/schedule/friday" className="text-dd-dark-purple">
+        <li className="mx-10">
+          <Link
+            to="/schedule/friday"
+            className="text-dd-dark-purple hover:text-dd-light-purple"
+          >
             Friday
           </Link>
         </li>
-        <li>
-          <Link to="/schedule/saturday">Saturday</Link>
+        <li className="mx-10">
+          <Link
+            to="/schedule/saturday"
+            className="text-dd-dark-purple hover:text-dd-light-purple"
+          >
+            Saturday
+          </Link>
         </li>
-        <li>
-          <Link to="/schedule/sunday">Sunday</Link>
+        <li className="mx-10">
+          <Link
+            to="/schedule/sunday"
+            className="text-dd-dark-purple hover:text-dd-light-purple"
+          >
+            Sunday
+          </Link>
         </li>
-        <li className="absolute right-0">
-          <Link className="nav" to="/locations">
-            view locations
+        <li className="absolute right-7">
+          <Link
+            to="/locations"
+            className="text-dd-dark-purple hover:text-dd-light-purple"
+          >
+            View locations
           </Link>
         </li>
       </ul>
