@@ -15,10 +15,12 @@ function Locations() {
 
   return (
     <>
-      <h2>locations:</h2>
-      <ul className="cards">
+      <h2 className="mb-10 font-serif text-5xl text-dd-yellow italic">
+        Locations
+      </h2>
+      <ul className="flex flex-wrap flex-row cards">
         {locations.map((location: Location) => (
-          <li key={location.id} className="card w-24">
+          <li key={location.id} className="card w-1/4">
             <div className="location">
               <span className="title">{location.name}</span>
               <p className="data">{location.description}</p>

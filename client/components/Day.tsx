@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 import { getEventsByDay } from '../apis/api'
 import { EventWithLocation } from '../../models/event'
@@ -19,17 +19,28 @@ function Day() {
 
   return (
     <>
-      <h2>
-        events: <span className="data">{day}</span>
-      </h2>
-      <a className="nav" href={`/events/add/${day}`}>
-        add event
-      </a>
-      <ul className="cards">
+      <div className="flex justify-between relative mb-10">
+        <h2 className="text-center font-serif text-5xl text-dd-yellow italic">
+          Events on <span className="capitalize">{day}</span>
+        </h2>
+        <Link
+          className="self-center rounded-md border border-dd-yellow/50  hover:border-dd-yellow font-serif text-dd-gold hover:text-dd-yellow px-10 py-2"
+          to={`/events/add/${day}`}
+        >
+          Add event
+        </Link>
+      </div>
+
+      <ul className="flex flex-row gap-5 justify-center cards">
         {events.map((event: EventWithLocation) => (
-          <li key={event.id} className="card">
+          <li
+            key={event.id}
+            className="card w-1/4 border border-dd-yellow/50 text-dd-yellow"
+          >
             <div className="event">
-              <span className="title">{event.eventName}</span>
+              <h3 className="mt-24 pt-5 border-t-4 border-dd-gold text-dd-gold font-serif text-xl">
+                {event.eventName}
+              </h3>
               <div className="time-location">
                 <p>
                   Location: <span className="data">{event.locationName}</span>
@@ -40,7 +51,7 @@ function Day() {
               </div>
             </div>
             <p className="event-description data">{event.description}</p>
-            <a href={`/events/${event.id}/edit`}>edit event</a>
+            <Link to={`/events/${event.id}/edit`}>edit event</Link>
           </li>
         ))}
       </ul>

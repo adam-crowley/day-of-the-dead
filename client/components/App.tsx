@@ -11,7 +11,7 @@ const App = () => {
         <Header />
         <Nav />
         <main className="flex justify-center">
-          <div className="w-full max-w-7xl">
+          <div className="w-full max-w-6xl pt-16 pb-28">
             <Outlet />
           </div>
         </main>

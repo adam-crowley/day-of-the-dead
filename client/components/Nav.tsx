@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 
 function Nav() {
   return (
-    <nav className="flex justify-center relative z-10 py-5 bg-dd-yellow">
+    <nav className="flex justify-center relative z-10 py-3 bg-dd-yellow">
       <ul className="flex text-center font-serif text-2xl">
-        <li className="mx-10">
+        <li className="mx-7">
           <Link
             to="/schedule/friday"
             className="text-dd-dark-purple hover:text-dd-light-purple"
@@ -12,7 +12,7 @@ function Nav() {
             Friday
           </Link>
         </li>
-        <li className="mx-10">
+        <li className="mx-7">
           <Link
             to="/schedule/saturday"
             className="text-dd-dark-purple hover:text-dd-light-purple"
@@ -20,7 +20,7 @@ function Nav() {
             Saturday
           </Link>
         </li>
-        <li className="mx-10">
+        <li className="mx-7">
           <Link
             to="/schedule/sunday"
             className="text-dd-dark-purple hover:text-dd-light-purple"
@@ -28,12 +28,12 @@ function Nav() {
             Sunday
           </Link>
         </li>
-        <li className="absolute right-7">
+        <li className="mx-7">
           <Link
             to="/locations"
             className="text-dd-dark-purple hover:text-dd-light-purple"
           >
-            View locations
+            Locations
           </Link>
         </li>
       </ul>
