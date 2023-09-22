@@ -32,36 +32,17 @@ a {
   background-repeat: no-repeat;
   background-position: center top 10px;
   filter: drop-shadow(0px 0px 10px rgba(218, 0, 253, 0.5));
-  padding: 15px;
   list-style: none;
 }
 
 
 
 /* Assign icons to list items */
-.cards li:nth-of-type(5n+1) {
-  background-image: url('/images/icons/icon-1.webp');
+.event.event--1 {
+  background-image: url('/images/icons/skull.png');
 }
 
-.cards li:nth-of-type(5n+2) {
-  background-image: url('/images/icons/icon-2.webp');
-}
 
-.cards li:nth-of-type(5n+3) {
-  background-image: url('/images/icons/icon-3.webp');
-}
-.cards li:nth-of-type(5n+4) {
-  background-image: url('/images/icons/icon-4.webp');
-}
-
-.cards li:nth-of-type(5n+5) {
-  background-image: url('/images/icons/icon-5.webp');
-}
-
-.location, .event {
-  display: flex;
-  flex-direction: column;
-}
 
 .location > p {
   margin-top: 0.625rem;
@@ -79,11 +60,6 @@ a {
 .time-location {
   margin-top: 15px;
   font-size: 0.875rem;
-}
-
-.event-description {
-  margin-top: 15px;
-  margin-bottom: 15px;
 }
 
 

@@ -31,27 +31,34 @@ function Day() {
         </Link>
       </div>
 
-      <ul className="flex flex-row gap-5 justify-center cards">
+      <ul className="flex flex-wrap flex-row gap-[5%] gap-y-10 cards">
         {events.map((event: EventWithLocation) => (
           <li
             key={event.id}
-            className="card w-1/4 border border-dd-yellow/50 text-dd-yellow"
+            className="flex flex-col justify-between card w-[30%] p-7 border border-dd-yellow/50 text-dd-yellow"
           >
-            <div className="event">
-              <h3 className="mt-24 pt-5 border-t-4 border-dd-gold text-dd-gold font-serif text-xl">
+            <div className={`event event--${event.id}`}>
+              <h3 className="mt-24 mb-5 pt-5 border-t-4 border-dd-gold text-dd-gold font-serif text-xl">
                 {event.eventName}
               </h3>
-              <div className="time-location">
-                <p>
-                  Location: <span className="data">{event.locationName}</span>
+              <div className="mb-5">
+                <p className="">
+                  Location:{' '}
+                  <span className="text-dd-gold">{event.locationName}</span>
                 </p>
                 <p>
-                  Time: <span className="data">{event.time}</span>
+                  Time: <span className="text-dd-gold">{event.time}</span>
                 </p>
               </div>
+              <p className="mb-5">{event.description}</p>
             </div>
-            <p className="event-description data">{event.description}</p>
-            <Link to={`/events/${event.id}/edit`}>edit event</Link>
+
+            <Link
+              to={`/events/${event.id}/edit`}
+              className="block w-full rounded-md border border-dd-yellow/50  hover:border-dd-yellow font-serif text-center text-dd-gold hover:text-dd-yellow px-10 py-2"
+            >
+              Edit event
+            </Link>
           </li>
         ))}
       </ul>
