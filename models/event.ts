@@ -8,6 +8,7 @@ export interface EventData {
 
 export interface EventWithLocation {
   id: number
+  locationId: number
   locationName: string
   eventName: string
   day: string

@@ -13,6 +13,7 @@ export function getEventsByDay(day: string, db = connection) {
     .where('events.day', day)
     .select(
       'locations.name as locationName',
+      'locations.id as locationId',
       'events.id as id',
       'events.name as eventName',
       'events.time as time',

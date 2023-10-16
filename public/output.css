@@ -558,8 +558,8 @@ video {
   margin-right: 2rem;
 }
 
-.mt-24 {
-  margin-top: 6rem;
+.mt-28 {
+  margin-top: 7rem;
 }
 
 .block {
@@ -812,17 +812,29 @@ a {
 }
 
 .card {
-  background-size: 75px;
+  background-size: 100px;
   background-repeat: no-repeat;
-  background-position: center top 10px;
+  background-position: center top 1.5rem;
   filter: drop-shadow(0px 0px 10px rgba(218, 0, 253, 0.5));
   list-style: none;
 }
 
 /* Assign icons to list items */
 
-.event.event--1 {
-  background-image: url('/images/icons/skull.png');
+.card.card--1 {
+  background-image: url('/images/icons/skull-1.png');
+}
+
+.card.card--2 {
+  background-image: url('/images/icons/skull-2.png');
+}
+
+.card.card--3 {
+  background-image: url('/images/icons/skull-3.png');
+}
+
+.card.card--4 {
+  background-image: url('/images/icons/skull-4.png');
 }
 
 .location > p {

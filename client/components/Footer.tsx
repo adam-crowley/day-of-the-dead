@@ -13,14 +13,15 @@ function Footer() {
         <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3368234">
           Pixabay.
         </a>{' '}
-        Animal icons created by{' '}
+        Dia de muertos icons created by{' '}
         <a
-          href="https://www.flaticon.com"
+          href="https://www.flaticon.com/free-icons/dia-de-muertos"
           target="_blank"
           rel="noreferrer"
+          title="dia de muertos icons"
           className="underline hover:no-underline"
         >
-          Flaticon
+          Freepik - Flaticon
         </a>
       </p>
       <p className="text-dd-yellow"></p>

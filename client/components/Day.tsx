@@ -35,10 +35,10 @@ function Day() {
         {events.map((event: EventWithLocation) => (
           <li
             key={event.id}
-            className="flex flex-col justify-between card w-[30%] p-7 border border-dd-yellow/50 text-dd-yellow"
+            className={`card card--${event.locationId} flex flex-col justify-between w-[30%] p-7 border border-dd-yellow/50 text-dd-yellow`}
           >
             <div className={`event event--${event.id}`}>
-              <h3 className="mt-24 mb-5 pt-5 border-t-4 border-dd-gold text-dd-gold font-serif text-xl">
+              <h3 className="mt-28 mb-5 pt-5 border-t-4 border-dd-gold text-dd-gold font-serif text-xl">
                 {event.eventName}
               </h3>
               <div className="mb-5">
