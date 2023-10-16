@@ -31,14 +31,14 @@ function Day() {
         </Link>
       </div>
 
-      <ul className="flex flex-wrap flex-row gap-[5%] gap-y-10 cards">
+      <ul className="flex flex-wrap flex-row gap-[5%] gap-y-10">
         {events.map((event: EventWithLocation) => (
           <li
             key={event.id}
             className={`card card--${event.locationId} flex flex-col justify-between w-[30%] p-7 border border-dd-yellow/50 text-dd-yellow`}
           >
-            <div className={`event event--${event.id}`}>
-              <h3 className="mt-28 mb-5 pt-5 border-t-4 border-dd-gold text-dd-gold font-serif text-xl">
+            <div>
+              <h3 className="mt-28 mb-5 pt-5 text-dd-gold font-serif text-xl">
                 {event.eventName}
               </h3>
               <div className="mb-5">

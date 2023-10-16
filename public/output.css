@@ -578,10 +578,6 @@ video {
   min-height: 100vh;
 }
 
-.w-1\/4 {
-  width: 25%;
-}
-
 .w-\[30\%\] {
   width: 30%;
 }
@@ -590,8 +586,20 @@ video {
   width: 300px;
 }
 
+.w-\[40\%\] {
+  width: 40%;
+}
+
 .w-full {
   width: 100%;
+}
+
+.w-\[45\%\] {
+  width: 45%;
+}
+
+.w-\[47\.5\%\] {
+  width: 47.5%;
 }
 
 .max-w-6xl {
@@ -616,6 +624,10 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-\[10\%\] {
+  gap: 10%;
 }
 
 .gap-\[5\%\] {
@@ -646,6 +658,10 @@ video {
   border-top-width: 4px;
 }
 
+.border-t-2 {
+  border-top-width: 2px;
+}
+
 .border-dd-gold {
   --tw-border-opacity: 1;
   border-color: rgb(255 192 1 / var(--tw-border-opacity));
@@ -653,6 +669,11 @@ video {
 
 .border-dd-yellow\/50 {
   border-color: rgb(243 239 211 / 0.5);
+}
+
+.border-dd-yellow {
+  --tw-border-opacity: 1;
+  border-color: rgb(243 239 211 / var(--tw-border-opacity));
 }
 
 .border-t-dd-yellow\/50 {
@@ -726,6 +747,22 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.pl-5 {
+  padding-left: 1.25rem;
+}
+
+.pl-10 {
+  padding-left: 2.5rem;
+}
+
+.pr-10 {
+  padding-right: 2.5rem;
 }
 
 .text-left {
@@ -819,8 +856,6 @@ a {
   list-style: none;
 }
 
-/* Assign icons to list items */
-
 .card.card--1 {
   background-image: url('/images/icons/skull-1.png');
 }
@@ -835,11 +870,6 @@ a {
 
 .card.card--4 {
   background-image: url('/images/icons/skull-4.png');
-}
-
-.location > p {
-  margin-top: 0.625rem;
-  margin-bottom: 0.625rem;
 }
 
 .title {

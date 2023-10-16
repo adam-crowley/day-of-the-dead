@@ -26,7 +26,6 @@ a {
   filter: drop-shadow(0px 0px 50px rgba(218, 0, 253, 0.5));
 }
 
-
 .card {
   background-size: 100px;
   background-repeat: no-repeat;
@@ -34,8 +33,6 @@ a {
   filter: drop-shadow(0px 0px 10px rgba(218, 0, 253, 0.5));
   list-style: none;
 }
-
-/* Assign icons to list items */
 .card.card--1 {
   background-image: url('/images/icons/skull-1.png');
 }
@@ -47,13 +44,6 @@ a {
 }
 .card.card--4 {
   background-image: url('/images/icons/skull-4.png');
-}
-
-
-
-.location > p {
-  margin-top: 0.625rem;
-  margin-bottom: 0.625rem;
 }
 
 .title {
