@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { gsap } from 'gsap'
 
 import { getEventsByDay } from '../apis/api'
 import { EventWithLocation } from '../../models/event'
@@ -7,6 +8,14 @@ import { EventWithLocation } from '../../models/event'
 function Day() {
   const { day } = useParams()
   const [events, setEvents] = useState([])
+
+  const onEnter = ({ currentTarget }) => {
+    gsap.to(currentTarget, { backgroundColor: '#e77614', scale: 1.2 })
+  }
+
+  const onLeave = ({ currentTarget }) => {
+    gsap.to(currentTarget, { backgroundColor: '#28a92b', scale: 1 })
+  }
 
   useEffect(() => {
     const eventsByDay = async () => {
@@ -26,6 +35,8 @@ function Day() {
         <Link
           className="self-center rounded-md border border-dd-yellow/50  hover:border-dd-yellow font-serif text-dd-gold hover:text-dd-yellow px-10 py-2"
           to={`/events/add/${day}`}
+          onMouseEnter={onEnter}
+          onMouseLeave={onLeave}
         >
           Add event
         </Link>
