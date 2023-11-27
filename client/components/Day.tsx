@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 
@@ -8,14 +8,7 @@ import { EventWithLocation } from '../../models/event'
 function Day() {
   const { day } = useParams()
   const [events, setEvents] = useState([])
-
-  const onEnter = ({ currentTarget }) => {
-    gsap.to(currentTarget, { backgroundColor: '#e77614', scale: 1.2 })
-  }
-
-  const onLeave = ({ currentTarget }) => {
-    gsap.to(currentTarget, { backgroundColor: '#28a92b', scale: 1 })
-  }
+  const comp = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     const eventsByDay = async () => {
@@ -26,17 +19,25 @@ function Day() {
     eventsByDay()
   }, [day])
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.to('h2', {
+        rotation: '+=360',
+      })
+    }, comp)
+
+    return () => ctx.revert() // cleanup
+  }, [day])
+
   return (
     <>
-      <div className="flex justify-between relative mb-10">
+      <div ref={comp} className="flex justify-between relative mb-10">
         <h2 className="text-center font-serif text-5xl text-dd-yellow italic">
           Events on <span className="capitalize">{day}</span>
         </h2>
         <Link
-          className="self-center rounded-md border border-dd-yellow/50  hover:border-dd-yellow font-serif text-dd-gold hover:text-dd-yellow px-10 py-2"
+          className="btn self-center rounded-md border border-dd-yellow/50 hover:border-dd-yellow font-serif text-dd-gold hover:text-dd-yellow px-10 py-2"
           to={`/events/add/${day}`}
-          onMouseEnter={onEnter}
-          onMouseLeave={onLeave}
         >
           Add event
         </Link>
