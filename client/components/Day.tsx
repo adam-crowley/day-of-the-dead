@@ -4,7 +4,6 @@ import { gsap } from 'gsap'
 
 import { getEventsByDay } from '../apis/api'
 import { EventWithLocation } from '../../models/event'
-import { log } from 'console'
 
 function Day() {
   const { day } = useParams()
