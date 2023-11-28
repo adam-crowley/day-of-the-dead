@@ -46,10 +46,6 @@ a {
   background-image: url('/images/icons/skull-4.png');
 }
 
-.time-location {
-  margin-top: 15px;
-  font-size: 0.875rem;
-}
 
 
 label {
@@ -78,11 +74,6 @@ button:hover {
   color: white;
 }
 
-textarea {
-  width: 300px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .form {
   display: grid;
   grid-template-columns: 200px  300px;
@@ -105,7 +96,16 @@ textarea {
   padding: 1rem;
 }
 
+/* Animation */
 
+.fade-left {
+  display: block;
+  position: absolute;
+  right: -5%;
+  height: 150%;
+  width: 110%;
+  transform: translateY(-15%);
+}
 
 
 

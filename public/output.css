@@ -586,20 +586,12 @@ video {
   width: 300px;
 }
 
-.w-\[40\%\] {
-  width: 40%;
+.w-\[47\.5\%\] {
+  width: 47.5%;
 }
 
 .w-full {
   width: 100%;
-}
-
-.w-\[45\%\] {
-  width: 45%;
-}
-
-.w-\[47\.5\%\] {
-  width: 47.5%;
 }
 
 .max-w-6xl {
@@ -626,10 +618,6 @@ video {
   justify-content: space-between;
 }
 
-.gap-\[10\%\] {
-  gap: 10%;
-}
-
 .gap-\[5\%\] {
   gap: 5%;
 }
@@ -654,26 +642,8 @@ video {
   border-top-width: 1px;
 }
 
-.border-t-4 {
-  border-top-width: 4px;
-}
-
-.border-t-2 {
-  border-top-width: 2px;
-}
-
-.border-dd-gold {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 192 1 / var(--tw-border-opacity));
-}
-
 .border-dd-yellow\/50 {
   border-color: rgb(243 239 211 / 0.5);
-}
-
-.border-dd-yellow {
-  --tw-border-opacity: 1;
-  border-color: rgb(243 239 211 / var(--tw-border-opacity));
 }
 
 .border-t-dd-yellow\/50 {
@@ -741,28 +711,20 @@ video {
   padding-bottom: 7rem;
 }
 
-.pt-16 {
-  padding-top: 4rem;
-}
-
-.pt-5 {
-  padding-top: 1.25rem;
-}
-
-.pl-2 {
-  padding-left: 0.5rem;
-}
-
-.pl-5 {
-  padding-left: 1.25rem;
-}
-
 .pl-10 {
   padding-left: 2.5rem;
 }
 
 .pr-10 {
   padding-right: 2.5rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
 }
 
 .text-left {
@@ -824,6 +786,10 @@ video {
   text-decoration-line: underline;
 }
 
+.opacity-0 {
+  opacity: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -872,19 +838,6 @@ a {
   background-image: url('/images/icons/skull-4.png');
 }
 
-.title {
-  font-weight: bold;
-  color: #1A5068;
-  font-size: 1.125rem;
-  margin-top: 80px;
-  padding-top: 10px;
-}
-
-.time-location {
-  margin-top: 15px;
-  font-size: 0.875rem;
-}
-
 label {
   display: inline-block;
   min-width: 90px;
@@ -911,11 +864,6 @@ button:hover {
   color: white;
 }
 
-textarea {
-  width: 300px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .form {
   display: grid;
   grid-template-columns: 200px  300px;
@@ -938,6 +886,17 @@ textarea {
   padding: 1rem;
 }
 
+/* Animation */
+
+.fade-left {
+  display: block;
+  position: absolute;
+  right: -5%;
+  height: 150%;
+  width: 110%;
+  transform: translateY(-15%);
+}
+
 .hover\:border-dd-yellow:hover {
   --tw-border-opacity: 1;
   border-color: rgb(243 239 211 / var(--tw-border-opacity));
@@ -956,8 +915,6 @@ textarea {
 .hover\:no-underline:hover {
   text-decoration-line: none;
 }
-
-
 
 
 
