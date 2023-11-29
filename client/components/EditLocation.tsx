@@ -40,7 +40,9 @@ function EditLocation() {
         </div>
       ) : locationData ? (
         <>
-          <h2>Edit Location!</h2>
+          <h2 className="relative font-serif text-5xl text-dd-yellow italic mb-10">
+            Edit Location!
+          </h2>
           <form onSubmit={handleSubmit(onSubmit)} className="form">
             <input type="hidden" value={locationData.id} {...register('id')} />
 
@@ -73,7 +75,12 @@ function EditLocation() {
             )}
 
             <div></div>
-            <button type="submit">Update event</button>
+            <button
+              type="submit"
+              className="btn self-center rounded-md border border-dd-yellow/50 hover:border-dd-yellow font-serif text-dd-gold hover:text-dd-yellow px-10 py-2"
+            >
+              Update event
+            </button>
           </form>
         </>
       ) : (
