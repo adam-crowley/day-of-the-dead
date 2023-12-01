@@ -42,15 +42,25 @@ function AddEvent() {
           transition={{ ease: 'easeInOut', duration: 1 }}
           className="fade-left bg-dd-dark-purple"
         ></motion.span>
-        Add new event for {day}
+        Add new event for <span className="capitalize">{day}</span>
       </h2>
 
       {isSubmitted ? (
-        <div className="success-message">
-          <p>Form submitted successfully!</p>
-        </div>
+        <motion.div
+          animate={{ opacity: 1 }}
+          transition={{ ease: 'easeInOut', duration: 0.4 }}
+          className="success-message opacity-0"
+        >
+          <img className="success-icon" src="/images/success.svg" alt="" />
+          <p>Event updated</p>
+        </motion.div>
       ) : eventsData ? (
-        <form onSubmit={handleSubmit(onSubmit)} className="form">
+        <motion.form
+          animate={{ opacity: 1 }}
+          transition={{ ease: 'easeInOut', duration: 0.4 }}
+          onSubmit={handleSubmit(onSubmit)}
+          className="form opacity-0"
+        >
           <label htmlFor="name">Event name</label>
           <input
             id="name"
@@ -60,8 +70,7 @@ function AddEvent() {
           />
           {errors.name && (
             <>
-              <div></div>
-              <p>This field is required</p>
+              <p className="error-message">This field is required</p>
             </>
           )}
 
@@ -74,8 +83,7 @@ function AddEvent() {
           ></textarea>
           {errors.description && (
             <>
-              <div></div>
-              <p>This field is required</p>
+              <p className="error-message">This field is required</p>
             </>
           )}
 
@@ -110,19 +118,17 @@ function AddEvent() {
           />
           {errors.time && (
             <>
-              <div></div>
-              <p>This field is required</p>
+              <p className="error-message">This field is required</p>
             </>
           )}
 
-          <div></div>
           <button
             type="submit"
             className="btn self-center rounded-md border border-dd-yellow/50 hover:border-dd-yellow font-serif text-dd-gold hover:text-dd-yellow px-10 py-2"
           >
             Add new event
           </button>
-        </form>
+        </motion.form>
       ) : (
         <p>Loading new event form</p>
       )}

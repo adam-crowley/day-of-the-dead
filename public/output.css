@@ -866,12 +866,6 @@ button {
   margin-bottom: 0.5rem;
 }
 
-@media (max-width:630px) {
-  .form label {
-    text-align: left;
-  }
-}
-
 .form input {
   font-size: 1.5rem;
   color: #F3EFD3;
@@ -888,6 +882,7 @@ button {
 }
 
 .form textarea {
+  display: block;
   font-size: 1.5rem;
   color: #F3EFD3;
   background-color: transparent;
@@ -929,10 +924,33 @@ button {
   padding: 0.25rem 3rem 0.25rem 1rem;
 }
 
-.form .success-message {
-  color: #fff;
-  background-color: #1A5068;
-  padding: 1rem;
+.success-message {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-message p {
+  font-size: 1.5rem;
+  color: #FFC001;
+}
+
+.success-message .success-icon {
+  display: inline-block;
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+.form .error-message {
+  display: block;
+  color: #0F0825;
+  background-color: #F3EFD3;
+  padding: 0.25rem 0.75rem;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
 }
 
 /* Animation */
