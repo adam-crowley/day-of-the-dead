@@ -52,7 +52,7 @@ function AddEvent() {
           className="success-message opacity-0"
         >
           <img className="success-icon" src="/images/success.svg" alt="" />
-          <p>Event updated</p>
+          <p>Event added!</p>
         </motion.div>
       ) : eventsData ? (
         <motion.form

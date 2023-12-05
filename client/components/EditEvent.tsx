@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { motion } from 'framer-motion'
 
 import { getEventById, updateEvent } from '../apis/api'
 
@@ -36,15 +37,30 @@ function EditEvent() {
   return (
     <>
       {isSubmitted ? (
-        <div className="success-message">
-          <p>Form submitted successfully!</p>
-        </div>
+        <motion.div
+          animate={{ opacity: 1 }}
+          transition={{ ease: 'easeInOut', duration: 0.4 }}
+          className="success-message opacity-0"
+        >
+          <img className="success-icon" src="/images/success.svg" alt="" />
+          <p>Event updated!</p>
+        </motion.div>
       ) : eventsData ? (
         <>
           <h2 className="relative font-serif text-5xl text-dd-yellow italic mb-10">
-            Edit the {eventsData.event.name} event
+            <motion.span
+              animate={{ width: 0 }}
+              transition={{ ease: 'easeInOut', duration: 1 }}
+              className="fade-left bg-dd-dark-purple"
+            ></motion.span>
+            Edit {eventsData.event.name} event
           </h2>
-          <form onSubmit={handleSubmit(onSubmit)} className="form">
+          <motion.form
+            animate={{ opacity: 1 }}
+            transition={{ ease: 'easeInOut', duration: 0.4 }}
+            onSubmit={handleSubmit(onSubmit)}
+            className="form opacity-0"
+          >
             <input
               type="hidden"
               value={eventsData.event.id}
@@ -130,7 +146,7 @@ function EditEvent() {
             >
               Update event
             </button>
-          </form>
+          </motion.form>
         </>
       ) : (
         <p>Loading form</p>
