@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { motion } from 'framer-motion'
 
@@ -10,6 +10,7 @@ import type { Location } from '../../models/location'
 
 function AddEvent() {
   const { day } = useParams()
+  const navigate = useNavigate()
   const [eventsData, setEventsData] = useState<EventsData>()
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
 
@@ -32,6 +33,9 @@ function AddEvent() {
   const onSubmit: SubmitHandler<Event> = async (data: Event) => {
     await addEvent(data)
     setIsSubmitted(true)
+    setTimeout(() => {
+      navigate(-1)
+    }, 2000)
   }
 
   return (
@@ -102,8 +106,13 @@ function AddEvent() {
           <div className="select-wrapper">
             <select id="day" {...register('day')} defaultValue={day}>
               {eventsData.days.map((eventDay: EventDay) => (
-                <option key={eventDay.name} value={eventDay.value}>
-                  {eventDay.name}
+                <option
+                  key={eventDay.name}
+                  value={eventDay.value}
+                  className="capitalize"
+                >
+                  {eventDay.name.charAt(0).toUpperCase() +
+                    eventDay.name.slice(1)}
                 </option>
               ))}
             </select>

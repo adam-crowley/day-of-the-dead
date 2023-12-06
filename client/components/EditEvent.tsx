@@ -132,7 +132,8 @@ function EditEvent() {
               >
                 {eventsData.days.map((eventDay: EventDay) => (
                   <option key={eventDay.name} value={eventDay.value}>
-                    {eventDay.name}
+                    {eventDay.name.charAt(0).toUpperCase() +
+                      eventDay.name.slice(1)}
                   </option>
                 ))}
               </select>

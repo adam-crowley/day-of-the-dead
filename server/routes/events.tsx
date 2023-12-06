@@ -39,7 +39,6 @@ router.get('/add/:day', async (req, res) => {
 // DELETE /events/delete
 router.delete('/delete/:id', async (req, res) => {
   try {
-    // const id = Number(req.body.id)
     const id = Number(req.params.id)
     await db.deleteEvent(id)
     res.sendStatus(200)
