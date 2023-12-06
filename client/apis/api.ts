@@ -23,9 +23,9 @@ export async function addEventByDay(day: string) {
   return res.body
 }
 
-export async function deleteEvent() {
-  const res = await request.del(`/api/v1/events/delete`)
-  return res.body
+export async function deleteEvent(id: number) {
+  const res = await request.del(`/api/v1/events/delete/${id}`)
+  return res
 }
 
 export async function getEventById(id: number) {

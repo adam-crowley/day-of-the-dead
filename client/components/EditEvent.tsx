@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { motion } from 'framer-motion'
 
-import { getEventById, updateEvent } from '../apis/api'
+import { getEventById, updateEvent, deleteEvent } from '../apis/api'
 
 import type { Event, EventByIdData, EventDay } from '../../models/event'
 import type { Location } from '../../models/location'
@@ -12,6 +12,7 @@ function EditEvent() {
   const { id } = useParams<string>()
   const [eventsData, setEventsData] = useState<EventByIdData>()
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
+  const [isDeleted, setIsDeleted] = useState<boolean>(false)
 
   useEffect(() => {
     const fetchEventById = async () => {
@@ -34,6 +35,11 @@ function EditEvent() {
     setIsSubmitted(true)
   }
 
+  const onDelete = async () => {
+    await deleteEvent(Number(id))
+    setIsDeleted(true)
+  }
+
   return (
     <>
       {isSubmitted ? (
@@ -44,6 +50,15 @@ function EditEvent() {
         >
           <img className="success-icon" src="/images/success.svg" alt="" />
           <p>Event updated!</p>
+        </motion.div>
+      ) : isDeleted ? (
+        <motion.div
+          animate={{ opacity: 1 }}
+          transition={{ ease: 'easeInOut', duration: 0.4 }}
+          className="success-message opacity-0"
+        >
+          <img className="success-icon" src="/images/success.svg" alt="" />
+          <p>Event deleted!</p>
         </motion.div>
       ) : eventsData ? (
         <>
@@ -76,7 +91,6 @@ function EditEvent() {
             ></input>
             {errors.name && (
               <>
-                <div></div>
                 <p>This field is required</p>
               </>
             )}
@@ -90,7 +104,6 @@ function EditEvent() {
             ></textarea>
             {errors.description && (
               <>
-                <div></div>
                 <p>This field is required</p>
               </>
             )}
@@ -134,7 +147,6 @@ function EditEvent() {
             />
             {errors.time && (
               <>
-                <div></div>
                 <p>This field is required</p>
               </>
             )}
@@ -145,6 +157,13 @@ function EditEvent() {
               className="btn self-center rounded-md border border-dd-yellow/50 hover:border-dd-yellow font-serif text-dd-gold hover:text-dd-yellow px-10 py-2"
             >
               Update event
+            </button>
+            <button
+              type="button"
+              onClick={onDelete}
+              className="btn self-center rounded-md border border-dd-yellow/50 hover:border-dd-yellow font-serif text-dd-yellow hover:text-dd-yellow px-10 py-2 ml-4"
+            >
+              Delete event
             </button>
           </motion.form>
         </>
