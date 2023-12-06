@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { motion } from 'framer-motion'
 
@@ -10,6 +10,7 @@ import type { Location } from '../../models/location'
 
 function EditEvent() {
   const { id } = useParams<string>()
+  const navigate = useNavigate()
   const [eventsData, setEventsData] = useState<EventByIdData>()
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
   const [isDeleted, setIsDeleted] = useState<boolean>(false)
@@ -33,11 +34,17 @@ function EditEvent() {
   const onSubmit: SubmitHandler<Event> = async (data: Event) => {
     await updateEvent(data)
     setIsSubmitted(true)
+    setTimeout(() => {
+      navigate(-1)
+    }, 2000)
   }
 
   const onDelete = async () => {
     await deleteEvent(Number(id))
     setIsDeleted(true)
+    setTimeout(() => {
+      navigate(-1)
+    }, 2000)
   }
 
   return (
