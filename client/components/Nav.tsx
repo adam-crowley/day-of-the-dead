@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Nav() {
@@ -6,8 +6,20 @@ function Nav() {
 
   function handleClick() {
     setIsNavExpanded(!isNavExpanded)
-    console.log('isNavExpanded', isNavExpanded)
   }
+
+  useEffect(() => {
+    function handleResize() {
+      const breakpoint = 768
+      const isMobile = window.innerWidth <= breakpoint
+      setIsNavExpanded(isMobile)
+    }
+    window.addEventListener('resize', handleResize)
+    handleResize()
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   return (
     <nav className="flex justify-center relative z-10 py-3 bg-dd-yellow">
@@ -49,11 +61,16 @@ function Nav() {
           </Link>
         </li>
       </ul>
-      <button className="h-8 w-8 nav__menu-btn" onClick={handleClick}>
+      <button className="nav__menu-btn" onClick={handleClick}>
         {isNavExpanded ? (
-          <svg className="nav__menu--open"></svg>
+          <>
+            <span className="nav__menu-title">Menu</span>
+            <svg className="nav__menu--open"></svg>
+          </>
         ) : (
-          <svg className="nav__menu--close"></svg>
+          <>
+            <svg className="nav__menu--close"></svg>
+          </>
         )}
       </button>
     </nav>
