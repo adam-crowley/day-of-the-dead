@@ -20,8 +20,8 @@ function Day() {
 
   return (
     <>
-      <div className="flex justify-between relative mb-10">
-        <h2 className="relative text-center font-serif text-5xl text-dd-yellow italic">
+      <div className="flex flex-col sm:flex-row justify-between relative mb-10">
+        <h2 className="relative text-left font-serif text-5xl text-dd-yellow italic mb-5 sm:mb-0">
           <motion.span
             key={day}
             animate={{ width: 0 }}
@@ -36,7 +36,7 @@ function Day() {
           className="opacity-0"
         >
           <Link
-            className="btn self-center rounded-md border border-dd-yellow/50 hover:border-dd-yellow font-serif text-dd-gold hover:text-dd-yellow px-10 py-2"
+            className="btn inline-block self-center rounded-md border border-dd-yellow/50 hover:border-dd-yellow font-serif text-dd-gold hover:text-dd-yellow px-10 py-2"
             to={`/events/add/${day}`}
           >
             Add event
@@ -50,7 +50,7 @@ function Day() {
             key={event.id}
             animate={{ opacity: 1 }}
             transition={{ ease: 'easeInOut', duration: 0.4 }}
-            className={`card card--${event.locationId} flex flex-col justify-between w-[30%] p-7 border border-dd-yellow/50 text-dd-yellow opacity-0`}
+            className={`card card--${event.locationId} flex flex-col justify-between w-full sm:w-[47.5%] md:w-[30%] p-7 border border-dd-yellow/50 text-dd-yellow opacity-0`}
           >
             <div>
               <h3 className="mt-28 mb-5 pt-5 text-dd-gold font-serif text-xl">

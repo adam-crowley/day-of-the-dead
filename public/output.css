@@ -579,6 +579,10 @@ video {
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .flex {
   display: flex;
 }
@@ -613,6 +617,10 @@ video {
 
 .w-\[40\%\] {
   width: 40%;
+}
+
+.w-\[45\%\] {
+  width: 45%;
 }
 
 .max-w-6xl {
@@ -1095,12 +1103,24 @@ button {
     margin-right: 1.5rem;
   }
 
+  .sm\:mb-0 {
+    margin-bottom: 0px;
+  }
+
   .sm\:w-\[300px\] {
     width: 300px;
   }
 
   .sm\:w-auto {
     width: auto;
+  }
+
+  .sm\:w-\[47\.5\%\] {
+    width: 47.5%;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
   }
 
   .sm\:text-5xl {
@@ -1126,6 +1146,10 @@ button {
 
   .md\:w-\[300px\] {
     width: 300px;
+  }
+
+  .md\:w-\[30\%\] {
+    width: 30%;
   }
 
   .md\:justify-center {
