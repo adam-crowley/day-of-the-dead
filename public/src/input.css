@@ -112,12 +112,18 @@ button {
   background-image: url('/images/icons/skull-4.png');
 }
 
-
 .form {
   margin: 0 auto;
-  padding: 1.75rem;
+  padding: 1.25rem;
   width: 620px;
+  max-width: 100%;
   border: solid 1px rgba(243, 239, 211, 0.5);
+}
+
+@media (min-width: 768px) {
+  .form {
+    padding: 1.75rem;
+  }
 }
 
 .form label {
@@ -163,6 +169,7 @@ button {
   position: relative;
   display: inline-block;
   margin-bottom: 2rem;
+  max-width: 100%;
 }
 
 .form .select-wrapper::after {
@@ -185,6 +192,7 @@ button {
   border: solid 1px rgba(243, 239, 211, 0.5);
   background-color: transparent;
   padding: 0.25rem 3rem 0.25rem 1rem;
+  width: 100%;
 }
 
 .success-message {

@@ -17,10 +17,10 @@ function Locations() {
 
   return (
     <>
-      <h2 className="relative mb-10 font-serif text-5xl text-dd-yellow italic">
+      <h2 className="relative mb-10 font-serif text-4xl md:text-5xl text-dd-yellow italic">
         <motion.span
           animate={{ width: 0 }}
-          transition={{ ease: 'easeInOut', duration: 0.5 }}
+          transition={{ ease: 'easeInOut', duration: 0.4 }}
           className="fade-left bg-dd-dark-purple"
         ></motion.span>
         Locations
@@ -31,7 +31,7 @@ function Locations() {
             key={location.id}
             animate={{ opacity: 1 }}
             transition={{ ease: 'easeInOut', duration: 0.4 }}
-            className={`card card--${location.id} flex flex-col justify-between w-[47.5%] p-7 border border-dd-yellow/50 text-dd-yellow opacity-0`}
+            className={`card card--${location.id} flex flex-col justify-between w-full sm:w-[47.5%] p-7 border border-dd-yellow/50 text-dd-yellow opacity-0`}
           >
             <div>
               <h3 className="mt-28 mb-5 pt-5 text-dd-gold font-serif text-xl">

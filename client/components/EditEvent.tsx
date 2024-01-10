@@ -69,10 +69,10 @@ function EditEvent() {
         </motion.div>
       ) : eventsData ? (
         <>
-          <h2 className="relative font-serif text-5xl text-dd-yellow italic mb-10">
+          <h2 className="relative font-serif text-4xl md:text-5xl text-dd-yellow italic mb-10">
             <motion.span
               animate={{ width: 0 }}
-              transition={{ ease: 'easeInOut', duration: 1 }}
+              transition={{ ease: 'easeInOut', duration: 0.4 }}
               className="fade-left bg-dd-dark-purple"
             ></motion.span>
             Edit {eventsData.event.name} event
@@ -162,14 +162,14 @@ function EditEvent() {
             <div></div>
             <button
               type="submit"
-              className="btn self-center rounded-md border border-dd-yellow/50 hover:border-dd-yellow font-serif text-dd-gold hover:text-dd-yellow px-10 py-2"
+              className="btn self-center rounded-md border border-dd-yellow/50 hover:border-dd-yellow font-serif text-dd-gold hover:text-dd-yellow px-3 sm:px-10 py-2"
             >
               Update event
             </button>
             <button
               type="button"
               onClick={onDelete}
-              className="btn self-center rounded-md border border-dd-yellow/50 hover:border-dd-yellow font-serif text-dd-yellow hover:text-dd-yellow px-10 py-2 ml-4"
+              className="btn self-center rounded-md border border-dd-yellow/50 hover:border-dd-yellow font-serif text-dd-yellow hover:text-dd-yellow px-4 sm:px-10 py-2 ml-4"
             >
               Delete event
             </button>

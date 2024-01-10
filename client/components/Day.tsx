@@ -21,11 +21,11 @@ function Day() {
   return (
     <>
       <div className="flex flex-col sm:flex-row justify-between relative mb-10">
-        <h2 className="relative text-left font-serif text-5xl text-dd-yellow italic mb-5 sm:mb-0">
+        <h2 className="relative text-left font-serif text-4xl md:text-5xl text-dd-yellow italic mb-5 sm:mb-0">
           <motion.span
             key={day}
             animate={{ width: 0 }}
-            transition={{ ease: 'easeInOut', duration: 0.5 }}
+            transition={{ ease: 'easeInOut', duration: 0.4 }}
             className="fade-left bg-dd-dark-purple"
           ></motion.span>
           Events on <span className="capitalize">{day}</span>

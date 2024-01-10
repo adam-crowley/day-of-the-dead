@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="flex justify-center absolute bottom-0 w-full py-5 bg-dd-dark-purple border-t border-t-dd-yellow/50">
+    <footer className="flex justify-center absolute bottom-0 w-full py-5 px-5 bg-dd-dark-purple border-t border-t-dd-yellow/50">
       <p className="text-dd-yellow">
         Image by{' '}
         <a

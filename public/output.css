@@ -563,16 +563,16 @@ video {
   margin-left: 1rem;
 }
 
-.mr-8 {
-  margin-right: 2rem;
+.mr-4 {
+  margin-right: 1rem;
 }
 
 .mt-28 {
   margin-top: 7rem;
 }
 
-.mr-4 {
-  margin-right: 1rem;
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .block {
@@ -595,32 +595,12 @@ video {
   min-height: 100vh;
 }
 
-.w-\[30\%\] {
-  width: 30%;
-}
-
-.w-\[300px\] {
-  width: 300px;
-}
-
-.w-\[47\.5\%\] {
-  width: 47.5%;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.w-\[50\%\] {
-  width: 50%;
-}
-
 .w-\[40\%\] {
   width: 40%;
 }
 
-.w-\[45\%\] {
-  width: 45%;
+.w-full {
+  width: 100%;
 }
 
 .max-w-6xl {
@@ -720,6 +700,11 @@ video {
   padding-right: 2.5rem;
 }
 
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -730,24 +715,19 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 }
 
-.py-0 {
-  padding-top: 0px;
-  padding-bottom: 0px;
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .pb-28 {
@@ -770,6 +750,10 @@ video {
   padding-top: 1.25rem;
 }
 
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -782,34 +766,19 @@ video {
   font-family: Merriweather, serif;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
-.text-7xl {
-  font-size: 4.5rem;
+.text-5xl {
+  font-size: 3rem;
   line-height: 1;
 }
 
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .capitalize {
@@ -967,9 +936,16 @@ button {
 
 .form {
   margin: 0 auto;
-  padding: 1.75rem;
+  padding: 1.25rem;
   width: 620px;
+  max-width: 100%;
   border: solid 1px rgba(243, 239, 211, 0.5);
+}
+
+@media (min-width: 768px) {
+  .form {
+    padding: 1.75rem;
+  }
 }
 
 .form label {
@@ -1015,6 +991,7 @@ button {
   position: relative;
   display: inline-block;
   margin-bottom: 2rem;
+  max-width: 100%;
 }
 
 .form .select-wrapper::after {
@@ -1037,6 +1014,7 @@ button {
   border: solid 1px rgba(243, 239, 211, 0.5);
   background-color: transparent;
   padding: 0.25rem 3rem 0.25rem 1rem;
+  width: 100%;
 }
 
 .success-message {
@@ -1099,20 +1077,20 @@ button {
 }
 
 @media (min-width: 640px) {
-  .sm\:mr-6 {
-    margin-right: 1.5rem;
-  }
-
   .sm\:mb-0 {
     margin-bottom: 0px;
   }
 
-  .sm\:w-\[300px\] {
-    width: 300px;
+  .sm\:mr-6 {
+    margin-right: 1.5rem;
   }
 
-  .sm\:w-auto {
-    width: auto;
+  .sm\:ml-4 {
+    margin-left: 1rem;
+  }
+
+  .sm\:w-\[300px\] {
+    width: 300px;
   }
 
   .sm\:w-\[47\.5\%\] {
@@ -1123,9 +1101,9 @@ button {
     flex-direction: row;
   }
 
-  .sm\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
+  .sm\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
   .sm\:text-6xl {
@@ -1144,10 +1122,6 @@ button {
     margin-right: 2rem;
   }
 
-  .md\:w-\[300px\] {
-    width: 300px;
-  }
-
   .md\:w-\[30\%\] {
     width: 30%;
   }
@@ -1161,20 +1135,29 @@ button {
     padding-bottom: 0.75rem;
   }
 
+  .md\:pl-0 {
+    padding-left: 0px;
+  }
+
   .md\:pl-10 {
     padding-left: 2.5rem;
+  }
+
+  .md\:pr-0 {
+    padding-right: 0px;
   }
 
   .md\:pr-10 {
     padding-right: 2.5rem;
   }
 
-  .md\:pl-0 {
-    padding-left: 0px;
+  .md\:pt-16 {
+    padding-top: 4rem;
   }
 
-  .md\:pr-0 {
-    padding-right: 0px;
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 
   .md\:text-7xl {

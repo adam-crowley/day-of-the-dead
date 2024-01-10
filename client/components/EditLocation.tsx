@@ -50,10 +50,10 @@ function EditLocation() {
         </motion.div>
       ) : locationData ? (
         <>
-          <h2 className="relative font-serif text-5xl text-dd-yellow italic mb-10">
+          <h2 className="relative font-serif text-4xl md:text-5xl text-dd-yellow italic mb-10">
             <motion.span
               animate={{ width: 0 }}
-              transition={{ ease: 'easeInOut', duration: 1 }}
+              transition={{ ease: 'easeInOut', duration: 0.4 }}
               className="fade-left bg-dd-dark-purple"
             ></motion.span>
             Edit {locationData.name}
