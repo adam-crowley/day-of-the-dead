@@ -6,23 +6,24 @@ exports.seed = function (knex) {
   return knex('locations').insert([
     {
       id: 1,
-      name: 'TangleStage',
-      description: 'Not the biggest stage, but perhaps the most hip.',
+      name: 'Pallas Cat Palace',
+      description: 'Any mice in the vicinity should keep a careful eye out.',
     },
     {
       id: 2,
-      name: 'Yella Yurt',
-      description: "It's a freakin' yurt! Get in here!",
+      name: 'Bear Fields',
+      description: `Towering trees and rivers overflowing with Salmon.`,
     },
     {
       id: 3,
-      name: 'Puffy Paddock',
-      description: 'A nice spot in the grass. Just look before you sit.',
+      name: 'Flying squirrel Grove',
+      description:
+        'Where the trees are tall but the squirrels are too lazy to climb them.',
     },
     {
       id: 4,
-      name: 'Kombucha Karavan',
-      description: 'Whet your whistle with some yummy living organisms.',
+      name: 'Capybara Spa',
+      description: `Where any Capybara worth it's salt baths in a hot spring with lemons.`,
     },
   ])
 }
