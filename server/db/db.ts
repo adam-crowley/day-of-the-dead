@@ -1,6 +1,6 @@
 import connection from './connection'
 
-import type { Event } from '../../models/Event'
+import type { Event } from '../../models/event'
 import type { Location } from '../../models/location'
 
 export function getAllLocations(db = connection) {
