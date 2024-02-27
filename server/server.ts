@@ -10,6 +10,9 @@ const server = express()
 
 server.use(express.json())
 
+server.get('/', (req, res) =>
+  res.status(200).json({ message: 'Day of the Dead server' })
+)
 server.use('/api/v1/locations', locations)
 server.use('/api/v1/schedule', schedule)
 server.use('/api/v1/events', events)
