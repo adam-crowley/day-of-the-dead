@@ -12,7 +12,7 @@
     "start": "node ./dist/server/index.js",
     "build": "run-s build:client build:server",
     "build:client": "vite build",
-    "build:server": "tsc -p ./server/tsconfig.json && cp ./server/db/dev.sqlite3 ./dist/server/server/db",
+    "build:server": "tsc -p ./server/tsconfig.json",
     "test": "vitest",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "format": "prettier -w '**/*.{js,jsx,ts,tsx}'",
