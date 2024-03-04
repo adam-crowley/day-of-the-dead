@@ -1,3 +1,3 @@
-import server from '../server/server'
+import app from '../server/server'
 
-export default server
+export default app
