@@ -16,7 +16,8 @@
     "test": "vitest",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "format": "prettier -w '**/*.{js,jsx,ts,tsx}'",
-    "knex": "knex --knexfile ./server/db/knexfile.js"
+    "knex": "knex --knexfile ./server/db/knexfile.js",
+    "vercel-build": "echo hello"
   },
   "keywords": [
     "frontend"
