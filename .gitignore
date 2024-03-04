@@ -73,3 +73,6 @@ tags
 
 # Local Netlify folder
 .netlify
+.vercel
+
+
