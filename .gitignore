@@ -75,4 +75,5 @@ tags
 .netlify
 .vercel
 
-
+# PostgreSQL secrets
+.env.development.local
