@@ -1,10 +1,10 @@
 {
   "workbench.colorCustomizations": {
-    "tab.activeBorder": "#3503fc",
-    "titleBar.activeBackground": "#3503fc",
+    "tab.activeBorder": "#2596be",
+    "titleBar.activeBackground": "#2596be",
     "titleBar.activeForeground": "#ffffff",
-    "statusBar.background": "#3503fc",
+    "statusBar.background": "#2596be",
     "statusBar.foreground": "#ffffff"
   },
-  "window.title": "~[client api]~${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${separator}${activeEditorShort}${separator}${rootName}${separator}${profileName}"
+  "window.title": "~[server]~${separator}${activeEditorShort}${separator}${rootName}${separator}${profileName}"
 }
