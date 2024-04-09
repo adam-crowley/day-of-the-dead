@@ -23,7 +23,7 @@ server.use(express.static(join(__dirname, './public')))
 
 server.use(
   cors({
-    origin: ['https://day-of-the-dead-front-end.vercel.app', 'localhost:3000'],
+    origin: ['https://day-of-the-dead-server.vercel.app', 'localhost:3000'],
     methods: ['POST', 'GET'],
     credentials: true,
   })
