@@ -56,7 +56,7 @@ module.exports = {
       password: 'samKyDqC0Bj1',
       database: 'verceldb',
       ssl: {
-        rejectUnauthorized: false, // You might need to set this to true in production
+        rejectUnauthorized: true, // You might need to set this to true in production
       },
     },
     // client: 'sqlite3',
