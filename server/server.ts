@@ -19,14 +19,6 @@ server.use('/api/v1/events', events)
 server.use('/api/v1/*', (req, res) => res.sendStatus(404))
 
 server.use(express.static(join(__dirname, './public')))
-// server.use(cors('*' as CorsOptions))
-
-server.use(
-  cors({
-    origin: ['https://day-of-the-dead-server.vercel.app', 'localhost:3000'],
-    methods: ['POST', 'GET', 'PUT', 'DELETE'],
-    credentials: true,
-  })
-)
+server.use(cors('*' as CorsOptions))
 
 export default server
