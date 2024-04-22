@@ -32,20 +32,30 @@ module.exports = {
   },
 
   test: {
-    client: 'sqlite3',
-    useNullAsDefault: true,
+    client: 'pg',
     connection: {
-      filename: ':memory:',
+      host: 'ep-muddy-scene-a4fenddf-pooler.us-east-1.aws.neon.tech',
+      user: 'default',
+      password: 'samKyDqC0Bj1',
+      database: 'verceldb',
+      ssl: {
+        rejectUnauthorized: false, // You might need to set this to true in production
+      },
     },
-    migrations: {
-      directory: join(__dirname, 'migrations'),
-    },
-    seeds: {
-      directory: join(__dirname, 'seeds'),
-    },
-    pool: {
-      afterCreate: (conn, cb) => conn.run('PRAGMA foreign_keys = ON', cb),
-    },
+    // client: 'sqlite3',
+    // useNullAsDefault: true,
+    // connection: {
+    //   filename: ':memory:',
+    // },
+    // migrations: {
+    //   directory: join(__dirname, 'migrations'),
+    // },
+    // seeds: {
+    //   directory: join(__dirname, 'seeds'),
+    // },
+    // pool: {
+    //   afterCreate: (conn, cb) => conn.run('PRAGMA foreign_keys = ON', cb),
+    // },
   },
 
   production: {
@@ -56,7 +66,7 @@ module.exports = {
       password: 'samKyDqC0Bj1',
       database: 'verceldb',
       ssl: {
-        rejectUnauthorized: true, // You might need to set this to true in production
+        rejectUnauthorized: false, // You might need to set this to true in production
       },
     },
     // client: 'sqlite3',
