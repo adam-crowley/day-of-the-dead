@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useLayoutEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
@@ -9,10 +9,14 @@ function Locations() {
   const [locations, setLocations] = useState([])
 
   useEffect(() => {
-    const allLocations = async () => {
-      setLocations(await getAllLocations())
+    try {
+      const allLocations = async () => {
+        setLocations(await getAllLocations())
+      }
+      allLocations()
+    } catch (error) {
+      console.log(`Error occured when fetching locations: ${error}`)
     }
-    allLocations()
   }, [])
 
   return (
