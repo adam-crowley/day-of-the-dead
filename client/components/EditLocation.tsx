@@ -14,17 +14,20 @@ function EditLocation() {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
 
   useEffect(() => {
-    try {
-      const fetchLocationById = async () => {
-        if (id) {
+    const fetchLocationById = async () => {
+      if (id) {
+        try {
           const locData = await getLocationById(Number(id))
+          if (!locData) {
+            throw new Error('Location data is undefined or null')
+          }
           setLocationData(locData)
+        } catch (error) {
+          console.error('Error fetching location data:', error)
         }
       }
-      fetchLocationById()
-    } catch (error) {
-      console.log(`Error occured when fetching location data: ${error}`)
     }
+    fetchLocationById()
   }, [id])
 
   const {
