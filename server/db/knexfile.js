@@ -1,4 +1,3 @@
-const { join } = require('node:path')
 require('dotenv').config({ path: '.env.development.local' })
 
 /**
@@ -12,7 +11,7 @@ module.exports = {
       user: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DATABASE,
-      ssl: { rejectUnauthorized: false }, // Only include if SSL is required
+      ssl: { rejectUnauthorized: false },
     },
     pool: {
       min: 2,
@@ -29,11 +28,11 @@ module.exports = {
   production: {
     client: 'pg',
     connection: {
-      host: 'ep-muddy-scene-a4fenddf-pooler.us-east-1.aws.neon.tech',
-      user: 'default',
-      password: 'samKyDqC0Bj1',
-      database: 'verceldb',
-      ssl: { rejectUnauthorized: true }, // You might need to set this to true in production
+      host: process.env.POSTGRES_HOST,
+      user: process.env.POSTGRES_USER,
+      password: process.env.POSTGRES_PASSWORD,
+      database: process.env.POSTGRES_DATABASE,
+      ssl: { rejectUnauthorized: true },
     },
     pool: {
       min: 2,

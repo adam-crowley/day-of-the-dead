@@ -74,6 +74,7 @@ tags
 # Local Netlify folder
 .netlify
 .vercel
+.vscode
 
 # PostgreSQL secrets
 .env.development.local
