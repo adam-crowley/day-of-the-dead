@@ -9,7 +9,7 @@ import { EventWithLocation } from '../../models/event'
 function Day() {
   const { day } = useParams()
   const [events, setEvents] = useState([])
-  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const eventsByDay = async () => {
