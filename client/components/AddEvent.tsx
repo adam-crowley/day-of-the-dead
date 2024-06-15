@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { motion } from 'framer-motion'
+import { Vortex } from 'react-loader-spinner'
 
 import { addEventByDay, addEvent } from '../apis/api'
 
@@ -13,12 +14,15 @@ function AddEvent() {
   const navigate = useNavigate()
   const [eventsData, setEventsData] = useState<EventsData>()
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const fetchEventsByDay = async () => {
       if (day) {
+        setIsLoading(true)
         const eventData = await addEventByDay(day)
         setEventsData(eventData)
+        setIsLoading(false)
       }
     }
     fetchEventsByDay()
@@ -40,14 +44,33 @@ function AddEvent() {
 
   return (
     <>
-      <h2 className="relative font-serif text-4xl md:text-5xl text-dd-yellow italic mb-10">
-        <motion.span
-          animate={{ width: 0 }}
-          transition={{ ease: 'easeInOut', duration: 0.4 }}
-          className="fade-left bg-dd-dark-purple"
-        ></motion.span>
-        Add new event for <span className="capitalize">{day}</span>
-      </h2>
+      {isLoading ? (
+        <Vortex
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="vortex-loading"
+          wrapperStyle={{}}
+          wrapperClass="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
+          colors={[
+            '#DA00FD',
+            '#FFC001',
+            '#F3EFD3',
+            '#DA00FD',
+            '#FFC001',
+            '#F3EFD3',
+          ]}
+        />
+      ) : (
+        <h2 className="relative font-serif text-4xl md:text-5xl text-dd-yellow italic mb-10">
+          <motion.span
+            animate={{ width: 0 }}
+            transition={{ ease: 'easeInOut', duration: 0.4 }}
+            className="fade-left bg-dd-dark-purple"
+          ></motion.span>
+          Add new event for <span className="capitalize">{day}</span>
+        </h2>
+      )}
 
       {isSubmitted ? (
         <motion.div
@@ -138,9 +161,7 @@ function AddEvent() {
             Add new event
           </button>
         </motion.form>
-      ) : (
-        <p>Loading new event form</p>
-      )}
+      ) : null}
     </>
   )
 }
