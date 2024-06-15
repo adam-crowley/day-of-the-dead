@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { motion } from 'framer-motion'
+import { Vortex } from 'react-loader-spinner'
 
 import { getLocationById, updateLocation } from '../apis/api'
 
@@ -12,16 +13,19 @@ function EditLocation() {
   const navigate = useNavigate()
   const [locationData, setLocationData] = useState<Location>()
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const fetchLocationById = async () => {
       if (id) {
         try {
+          setIsLoading(true)
           const locData = await getLocationById(Number(id))
           if (!locData) {
             throw new Error('Location data is undefined or null')
           }
           setLocationData(locData)
+          setIsLoading(false)
         } catch (error) {
           console.error('Error fetching location data:', error)
         }
@@ -46,7 +50,24 @@ function EditLocation() {
 
   return (
     <>
-      {isSubmitted ? (
+      {isLoading ? (
+        <Vortex
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="vortex-loading"
+          wrapperStyle={{}}
+          wrapperClass="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
+          colors={[
+            '#DA00FD',
+            '#FFC001',
+            '#F3EFD3',
+            '#DA00FD',
+            '#FFC001',
+            '#F3EFD3',
+          ]}
+        />
+      ) : isSubmitted ? (
         <motion.div
           animate={{ opacity: 1 }}
           transition={{ ease: 'easeInOut', duration: 0.4 }}
@@ -110,9 +131,7 @@ function EditLocation() {
             </button>
           </motion.form>
         </>
-      ) : (
-        <p>Loading form</p>
-      )}
+      ) : null}
     </>
   )
 }
