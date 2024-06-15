@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { motion } from 'framer-motion'
+import { Vortex } from 'react-loader-spinner'
 
 import { getEventById, updateEvent, deleteEvent } from '../apis/api'
 
@@ -14,12 +15,15 @@ function EditEvent() {
   const [eventsData, setEventsData] = useState<EventByIdData>()
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
   const [isDeleted, setIsDeleted] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const fetchEventById = async () => {
       if (id) {
+        setIsLoading(true)
         const eventData = await getEventById(Number(id))
         setEventsData(eventData)
+        setIsLoading(false)
       }
     }
     fetchEventById()
@@ -49,7 +53,24 @@ function EditEvent() {
 
   return (
     <>
-      {isSubmitted ? (
+      {isLoading ? (
+        <Vortex
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="vortex-loading"
+          wrapperStyle={{}}
+          wrapperClass="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
+          colors={[
+            '#DA00FD',
+            '#FFC001',
+            '#F3EFD3',
+            '#DA00FD',
+            '#FFC001',
+            '#F3EFD3',
+          ]}
+        />
+      ) : isSubmitted ? (
         <motion.div
           animate={{ opacity: 1 }}
           transition={{ ease: 'easeInOut', duration: 0.4 }}
@@ -175,9 +196,7 @@ function EditEvent() {
             </button>
           </motion.form>
         </>
-      ) : (
-        <p>Loading form</p>
-      )}
+      ) : null}
     </>
   )
 }
