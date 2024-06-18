@@ -541,6 +541,10 @@ video {
   left: 50%;
 }
 
+.top-\[13\.5rem\] {
+  top: 13.5rem;
+}
+
 .top-\[50\%\] {
   top: 50%;
 }
@@ -595,12 +599,16 @@ video {
   display: none;
 }
 
+.h-\[13\.5rem\] {
+  height: 13.5rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
 
-.w-\[40\%\] {
-  width: 40%;
+.w-\[134px\] {
+  width: 134px;
 }
 
 .w-full {
@@ -709,6 +717,10 @@ video {
   --tw-gradient-to: rgb(218 0 253 / 0.3) var(--tw-gradient-to-position);
 }
 
+.p-5 {
+  padding: 1.25rem;
+}
+
 .p-7 {
   padding: 1.75rem;
 }
@@ -756,16 +768,20 @@ video {
   padding-left: 1.25rem;
 }
 
+.pl-\[6\.5rem\] {
+  padding-left: 6.5rem;
+}
+
 .pr-5 {
   padding-right: 1.25rem;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
-}
-
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.pt-\[6\.5rem\] {
+  padding-top: 6.5rem;
 }
 
 .text-left {
@@ -920,11 +936,16 @@ button {
 }
 
 .card {
-  background-size: 100px;
+  background-size: 75px;
   background-repeat: no-repeat;
-  background-position: center top 1.5rem;
+  background-position: left 0.9rem top 1.25rem;
   filter: drop-shadow(0px 0px 10px rgba(218, 0, 253, 0.5));
   list-style: none;
+  @media (min-width: 640px) {
+    background-size: 100px;
+
+    background-position: center top 1.5rem;
+  }
 }
 
 .card.card--1 {
@@ -1086,12 +1107,24 @@ button {
 }
 
 @media (min-width: 640px) {
+  .sm\:top-\[23\.25rem\] {
+    top: 23.25rem;
+  }
+
   .sm\:mb-0 {
     margin-bottom: 0px;
   }
 
   .sm\:mr-6 {
     margin-right: 1.5rem;
+  }
+
+  .sm\:mt-28 {
+    margin-top: 7rem;
+  }
+
+  .sm\:h-\[23\.25rem\] {
+    height: 23.25rem;
   }
 
   .sm\:w-\[300px\] {
@@ -1106,9 +1139,17 @@ button {
     flex-direction: row;
   }
 
+  .sm\:p-7 {
+    padding: 1.75rem;
+  }
+
   .sm\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .sm\:pt-5 {
+    padding-top: 1.25rem;
   }
 
   .sm\:text-6xl {
@@ -1156,8 +1197,8 @@ button {
     padding-right: 2.5rem;
   }
 
-  .md\:pt-16 {
-    padding-top: 4rem;
+  .md\:pt-\[6rem\] {
+    padding-top: 6rem;
   }
 
   .md\:text-5xl {

@@ -1,6 +1,5 @@
 import { Outlet } from 'react-router-dom'
 
-import Nav from './Nav'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -9,9 +8,8 @@ const App = () => {
     <>
       <div className="flex flex-col relative min-h-screen bg-dd-dark-purple">
         <Header />
-        <Nav />
         <main className="flex grow justify-center">
-          <div className="relative w-full max-w-6xl pt-10 md:pt-16 pr-5 md:pr-10 pl-5 md:pl-10 pb-28">
+          <div className="relative w-full max-w-6xl pt-[6.5rem] md:pt-[6rem] pr-5 md:pr-10 pl-5 md:pl-10 pb-28">
             <Outlet />
           </div>
         </main>

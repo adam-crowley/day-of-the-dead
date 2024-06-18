@@ -22,7 +22,7 @@ function Nav() {
   }, [])
 
   return (
-    <nav className="flex justify-between md:justify-center relative z-10 py-2 md:py-3 pr-5 md:pr-10 pl-5 md:pl-10 bg-dd-yellow">
+    <nav className="absolute flex justify-between md:justify-center w-full top-[13.5rem] sm:top-[23.25rem] z-10 py-2 md:py-3 pr-5 md:pr-10 pl-5 md:pl-10 bg-dd-yellow">
       <div className="nav__spacer"></div>
       <ul
         className={`nav__list ${

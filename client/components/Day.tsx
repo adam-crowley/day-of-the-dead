@@ -72,23 +72,21 @@ function Day() {
                 key={event.id}
                 animate={{ opacity: 1 }}
                 transition={{ ease: 'easeInOut', duration: 0.4 }}
-                className={`card card--${event.locationId} flex flex-col justify-between w-full sm:w-[47.5%] md:w-[30%] p-7 border border-dd-yellow/50 text-dd-yellow opacity-0`}
+                className={`card card--${event.locationId} flex flex-col justify-between w-full sm:w-[47.5%] md:w-[30%] p-5 pl-[6.5rem] sm:p-7 border border-dd-yellow/50 text-dd-yellow opacity-0`}
               >
-                <div>
-                  <h3 className="mt-28 mb-5 pt-5 text-dd-gold font-serif text-xl">
-                    {event.eventName}
-                  </h3>
-                  <div className="mb-5">
-                    <p className="">
-                      Location:{' '}
-                      <span className="text-dd-gold">{event.locationName}</span>
-                    </p>
-                    <p>
-                      Time: <span className="text-dd-gold">{event.time}</span>
-                    </p>
-                  </div>
-                  <p className="mb-5">{event.description}</p>
+                <h3 className="sm:mt-28 mb-5 sm:pt-5 text-dd-gold font-serif text-xl">
+                  {event.eventName}
+                </h3>
+                <div className="mb-5">
+                  <p className="">
+                    Location:{' '}
+                    <span className="text-dd-gold">{event.locationName}</span>
+                  </p>
+                  <p>
+                    Time: <span className="text-dd-gold">{event.time}</span>
+                  </p>
                 </div>
+                <p className="mb-5">{event.description}</p>
 
                 <Link
                   to={`/events/${event.id}/edit`}
