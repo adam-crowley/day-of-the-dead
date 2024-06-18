@@ -3,14 +3,19 @@ import { Link } from 'react-router-dom'
 
 function Nav() {
   const [isNavExpanded, setIsNavExpanded] = useState(true)
+  const breakpoint = 768
+  const isMobile = window.innerWidth <= breakpoint
 
   function handleClick() {
     setIsNavExpanded(!isNavExpanded)
   }
 
+  function closeNav() {
+    isMobile ? setIsNavExpanded(true) : null
+  }
+
   useEffect(() => {
     function handleResize() {
-      const breakpoint = 768
       const isMobile = window.innerWidth <= breakpoint
       setIsNavExpanded(isMobile)
     }
@@ -31,6 +36,7 @@ function Nav() {
       >
         <li className="mx-7 my-2 md:my-0">
           <Link
+            onClick={closeNav}
             to="/schedule/friday"
             className="text-dd-dark-purple hover:text-dd-light-purple"
           >
@@ -39,6 +45,7 @@ function Nav() {
         </li>
         <li className="mx-7 my-2 md:my-0">
           <Link
+            onClick={closeNav}
             to="/schedule/saturday"
             className="text-dd-dark-purple hover:text-dd-light-purple"
           >
@@ -47,6 +54,7 @@ function Nav() {
         </li>
         <li className="mx-7 my-2 md:my-0">
           <Link
+            onClick={closeNav}
             to="/schedule/sunday"
             className="text-dd-dark-purple hover:text-dd-light-purple"
           >
@@ -55,6 +63,7 @@ function Nav() {
         </li>
         <li className="mx-7 my-2 md:my-0">
           <Link
+            onClick={closeNav}
             to="/locations"
             className="text-dd-dark-purple hover:text-dd-light-purple"
           >
